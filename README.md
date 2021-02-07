@@ -47,44 +47,39 @@ View TESTING.md [HERE]()
 
 ### User Stories
 
-| User Story    #ID  |  As a… |I want to be able to…| So I can….  | 
-|---|---|---|---|---|
-| Viewing and Nav |
-|---|---|---|---|---|
-| 1 | Shopper | Browse images of products | To select ones I like to purchase |
-| 2 | Shopper | View the products details | Check price, dimensions, IP rating, description, Reviews and ratings |
-| 3 | Shopper | Add items to shopping bag | So I can buy or continue shopping |
-| 4 | Shopper | View special/clearance offers | Purchase items at discount price |
-| Registration and user Accouts |
-|---|---|---|---|---|
-| 5 | New user | Easily sign up for an account | Have an account to view previous orders and delivery details |
-| 6 | Registered User | Easily login and out of my account | Access my profile page and securely logout |
-| 7 | Registered User | Find a recommeded electrician | Have my purchased products installed safely and correctly |
-| 8 | Registered User | Review/Rate Tradesman | Let other users know my experience with the tradesman |
-| 9 | Registered User | Confirmation email after Registering | Verify my account has been successfully registered |
-| Sorting and Searching |
-|---|---|---|---|---|
-| 10  | Shopper | Sort the list of available products | Easily searched for items relevant to my needs |
-| 11  | Shopper | Sort the category of product | Find highest rated or best priced product |
-| 12  | Shopper | Search for item by name or description of the product  | Find a specific item I'd like to find and reduce time spent searching through products |
-| 13  | Shopper | See what I've searched for and see the amount of results return from search | Quickly decide if the product I'm looking for is available |
-| Purchasing and Checkout |
-|---|---|---|---|---|
-| 14 | Shopper | Easily update the quantity of items in my bag | Quickly increase/decrease the amount of an item in my bag |
-| 15 | Shopper | Add items to shopping bag | So I can buy or continue shopping |
-| 16 | Shopper | View items in my bag | To update bag items |
-| 17 | Shopper | Confirmation email after placing order | Confirm my order was received successfully |
-| 18 | Shopper | Enter my delivery information | Receive my items at my preferred destination |
-| 19 | Registered User | Save my details to my profile | Won't have to enter them for all orders |
-| 20 | Shopper | Securely enter my payment details | Check out quickly |
-| 21 | Shopper | Feel my personal information is safe | Confidently provide the information needed to complete my order |
-| 22 | Shopper | View summary of order after purchase | Confirm an error hasn't been made |
-| 23 | Shopper | Receive a confirmation email from the company  | Confirm my order has been placed with the company and have a confirmation of what I have ordered |
-| Admin and Management |
-|---|---|---|---|---|
-| 24 | Admin | Add new products  | Add new products to my store when they are launched |
-| 25 | Admin | Update a product | Update price, description, images among other product criteria |
-| 26 | Admin | Delete a product | Remove product that is no longer available for purchase |
+| User Story    #ID | As a…           | I want to be able to…                                                       | So I can….                                                                                       |
+|:-------------------:|:-----------------:|:-----------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------:|
+|                   |                 | Viewing and Nav                                                             |                                                                                                  |
+| 1                 | Shopper         | Browse images of products                                                   | To select ones I like to purchase                                                                |
+| 2                 | Shopper         | View the products details                                                   | Check price, dimensions, IP rating, description, Reviews and ratings                             |
+| 3                 | Shopper         | Add items to shopping bag                                                   | So I can buy or continue shopping                                                                |
+| 4                 | Shopper         | View special/clearance offers                                               | Purchase items at discount price                                                                 |
+|                   |                 | Registration and Nav                                                        |                                                                                                  |
+| 5                 | New user        | Easily sign up for an account                                               | Have an account to view previous orders and delivery details                                     |
+| 6                 | Registered User | Easily login and out of my account                                          | Access my profile page and securely logout                                                       |
+| 7                 | Registered User | Find a recommeded electrician                                               | Have my purchased products installed safely and correctly                                        |
+| 8                 | Registered User | Review/Rate Tradesman                                                       | Let other users know my experience with the tradesman                                            |
+| 9                 | Registered User | Confirmation email after Registering                                        | Verify my account has been successfully registered                                               |
+|                   |                 | Sorting and Searching                                                       |                                                                                                  |
+| 10                | Shopper         | Sort the list of available products                                         | Easily searched for items relevant to my needs                                                   |
+| 11                | Shopper         | Sort the category of product                                                | Find highest rated or best priced product                                                        |
+| 12                | Shopper         | Search for item by name or description of the product                       | Find a specific item I'd like to find and reduce time spent searching through products           |
+| 13                | Shopper         | See what I've searched for and see the amount of results return from search | Quickly decide if the product I'm looking for is available                                       |
+|                   |                 | Purchasing and Checkout                                                     |                                                                                                  |
+| 14                | Shopper         | Easily update the quantity of items in my bag                               | Quickly increase/decrease the amount of an item in my bag                                        |
+| 15                | Shopper         | Add items to shopping bag                                                   | So I can buy or continue shopping                                                                |
+| 16                | Shopper         | View items in my bag                                                        | To update bag items                                                                              |
+| 17                | Shopper         | Confirmation email after placing order                                      | Confirm my order was received successfully                                                       |
+| 18                | Shopper         | Enter my delivery information                                               | Receive my items                                                                                 |
+| 19                | Shopper         | Easily enter my payment details                                             | Check out quickly                                                                                |
+| 20                | Shopper         | Feel my information is safe                                                 | Confidently provide the information needed to complete my order                                  |
+| 21                | Shopper         | View summary of order after purchase                                        | Confirm an error hasn't been made                                                                |
+| 22                | Shopper         | Receive a confirmation email from the company                               | Confirm my order has been placed with the company and have a confirmation of what I have ordered |
+|                   |                 | Admin and Management                                                        |                                                                                                  |
+| 23                | Admin           | Add new products                                                            | Add new products to my store                                                                     |
+| 24                | Admin           | Update a product                                                            | Update price, description, images among other product criteria                                   |
+| 25                | Admin           | Delete a product                                                            | Remove product that is no longer available for purchase                                          |
+
 
 ## Design 
 
