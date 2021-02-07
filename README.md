@@ -1,45 +1,180 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Bright Ideas]()
 
-Welcome Brian Murphy,
+# Share A Plate
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+View the live site [HERE]()
 
-## Gitpod Reminders
+View the GitHub repository [Here]()
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+View TESTING.md [HERE]()
 
-`python3 -m http.server`
+## About
 
-A blue button should appear to click: *Make Public*,
 
-Another blue button should appear to click: *Open Browser*.
+## Table of Contents
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+1. [User Experience](#ux)
 
-A blue button should appear to click: *Make Public*,
+- [User Stories](#user-stories)
 
-Another blue button should appear to click: *Open Browser*.
+- [Design](#design)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- [Features](#features)
 
-## Updates Since The Instructional Video
+- [Future Features](#future-features)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- [Wireframes](#wireframes)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- [Technologies Used](#technologies-used)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- [Testing](#testing)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+2. [Deployment](#deployment)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- [Steps for Cloning Locally](#steps-for-cloning-locally)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- [Deploying to Heroku](#deploying-to-heroku)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+3. [Credits](#credits)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- [Content](#content)
 
---------
+- [Media](#media)
 
-Happy coding!
+- [Acknowledgements](#acknowledgements)
+
+## User Experience (UX)
+
+### User Stories
+
+| User Story    #ID  |  As a… |I want to be able to…| So I can….  | 
+|---|---|---|---|---|
+| Viewing and Nav |
+|---|---|---|---|---|
+| 1 | Shopper | Browse images of products | To select ones I like to purchase |
+| 2 | Shopper | View the products details | Check price, dimensions, IP rating, description, Reviews and ratings |
+| 3 | Shopper | Add items to shopping bag | So I can buy or continue shopping |
+| 4 | Shopper | View special/clearance offers | Purchase items at discount price |
+| Registration and user Accouts |
+|---|---|---|---|---|
+| 5 | New user | Easily sign up for an account | Have an account to view previous orders and delivery details |
+| 6 | Registered User | Easily login and out of my account | Access my profile page and securely logout |
+| 7 | Registered User | Find a recommeded electrician | Have my purchased products installed safely and correctly |
+| 8 | Registered User | Review/Rate Tradesman | Let other users know my experience with the tradesman |
+| 9 | Registered User | Confirmation email after Registering | Verify my account has been successfully registered |
+| Sorting and Searching |
+|---|---|---|---|---|
+| 10  | Shopper | Sort the list of available products | Easily searched for items relevant to my needs |
+| 11  | Shopper | Sort the category of product | Find highest rated or best priced product |
+| 12  | Shopper | Search for item by name or description of the product  | Find a specific item I'd like to find and reduce time spent searching through products |
+| 13  | Shopper | See what I've searched for and see the amount of results return from search | Quickly decide if the product I'm looking for is available |
+| Purchasing and Checkout |
+|---|---|---|---|---|
+| 14 | Shopper | Easily update the quantity of items in my bag | Quickly increase/decrease the amount of an item in my bag |
+| 15 | Shopper | Add items to shopping bag | So I can buy or continue shopping |
+| 16 | Shopper | View items in my bag | To update bag items |
+| 17 | Shopper | Confirmation email after placing order | Confirm my order was received successfully |
+| 18 | Shopper | Enter my delivery information | Receive my items at my preferred destination |
+| 19 | Registered User | Save my details to my profile | Won't have to enter them for all orders |
+| 20 | Shopper | Securely enter my payment details | Check out quickly |
+| 21 | Shopper | Feel my personal information is safe | Confidently provide the information needed to complete my order |
+| 22 | Shopper | View summary of order after purchase | Confirm an error hasn't been made |
+| 23 | Shopper | Receive a confirmation email from the company  | Confirm my order has been placed with the company and have a confirmation of what I have ordered |
+| Admin and Management |
+|---|---|---|---|---|
+| 24 | Admin | Add new products  | Add new products to my store when they are launched |
+| 25 | Admin | Update a product | Update price, description, images among other product criteria |
+| 26 | Admin | Delete a product | Remove product that is no longer available for purchase |
+
+## Design 
+
+  ### Colour Scheme
+
+  ### Typography
+
+ 
+
+  ### Wireframes
+
+  I've created the wireframes for this project using Balsamiq Wireframes
+  To view the wireframes of this project click [HERE]()
+
+  ### Original Sketches
+
+  If you wish to see the original paper sketches of the project click [HERE]()
+
+## Features
+
+  ### Existing Features
+
+   
+
+  ### Future Features
+
+
+## Technologies Used
+
+  * Languages 
+
+    - [HTML5](https://developer.mozilla.org/en-US/docs/Web/HTML)
+    - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+    - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+    - [Python](https://www.python.org/)
+
+  * Frontend
+
+    - 
+    - [Font Awesome](https://fontawesome.com/v4.7.0/icons/) 
+    - 
+    - [Favicon](https://favicon.io/)
+    - [JQuery](https://jquery.com/download/)
+    - [Google Fonts](https://fonts.google.com/)
+    
+  * Backend
+
+    - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    - [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+    - [Werkzueg](https://werkzeug.palletsprojects.com/en/1.0.x/)
+    - [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/)
+    - [MongoDB](https://www.mongodb.com/)
+
+  * Other
+
+    - [GitHub](https://github.com/)
+    - [Heroku](https://heroku.com/)
+    - [Gitpod](https://gitpod.io/)
+    - [Balsamiq](https://balsamiq.com/)
+    - [RandomKeygen](https://randomkeygen.com/)
+    - [Coolors](https://coolors.co/)
+    - [Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab)
+    - [Remove BG](https://www.remove.bg/)
+    - [Am I Responsive](http://ami.responsivedesign.is/)
+    
+
+
+## Testing
+
+View TESTING.md [HERE]()
+  
+## Deployment
+
+#### Requirements
+
+### Steps for Cloning Locally
+
+
+### Deploying to Heroku
+
+
+## Credits
+
+### Content
+
+
+
+### Media 
+
+
+
+### Acknowledgements
+
