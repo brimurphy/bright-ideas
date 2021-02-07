@@ -1,8 +1,25 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
+{% block page_header %}
+    <div class="container container-header">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
 
-    <h1>Shining a light on the subject!</h1>
-    
+{% block content %}
+    <div class="container-sm">
+        <div class="row">
+            <div class="col-7 col-md-6 my-auto">
+                <h1 class="display-6 text-uppercase">
+                    Bring your Ideas to <span>Light</span>
+                </h1>
+                <h4>
+                    <a href="#" class="shop-now-btn btn btn-lg rounded-3 text-uppercase">Shop Now</a>
+                </h4>
+            </div>
+        </div>
+    </div>    
 {% endblock %}
