@@ -28,7 +28,68 @@
 
 <body>
 
-    <header class="container-fluid fixed-top"></header>
+    <header class="container-fluid fixed-top">
+        <div class="row">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <a href="{% url 'home' %}">
+                    <h2>Bright Ideas</h2>
+                </a>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <form method="GET" action="">
+                    <div class="input-group w-100">
+                        <input type="text" placeholder=" Search.." name="q" class="form-control border border-1 rounded-pill">
+                        <div class="">
+                            <button type="submit" class="form-control btn btn-outline-secondary border border-1 rounded-3">
+                                Submit 
+                            </button>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+                <ul class="list-inline list-unstyled text-center text-lg-end">
+                    <li class="list-inline-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="text-center">
+                                <div>
+                                    <p class="my-0">My Account</p>
+                                </div>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="navbarDarkDropdownMenuLink">
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                    <li><a class="dropdown-item" href="#">Project Management</a></li>
+                                {% endif %}
+                                <li><a class="dropdown-item" href="#">My Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Tradespeople</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                            {% else %}
+                                <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                                <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="nav-link">
+                            <div class="text-center">
+                                <div>Bag</div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                        €{{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        €0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
     {% if messages %}
         <div class="msg-container"></div>
