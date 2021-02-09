@@ -29,6 +29,7 @@
 
 <body>
 
+    <!-- header -->
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -99,8 +100,72 @@
     {% block page_header %}
     {% endblock %}
 
-    {% block content %}
-    {% endblock %}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- footer -->
+    <footer class="container-fluid text-center fixed-bottom pb-2">
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <div class="row">
+                    <a 
+                    href="https://www.google.com/maps/place/National+Lighting/@53.3257169,-6.3608587,15z/data=!4m5!3m4!1s0x0:0xec50d0722853e6f6!8m2!3d53.3257169!4d-6.3608587"
+                    class="text-decoration-none"
+                    target="_blank">
+                        <div class="col-12">
+                            Knockmitten Ln,
+                        </div>
+                        <div class="col-12">
+                            Fox-And-Geese Common,
+                        </div>
+                        <div class="col-12">
+                            Dublin 12,
+                        </div>
+                        <div class="col-12">
+                            D12 E7VP
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="row">
+                    <div class="col-12">
+                        <p><strong>Follow Us:</strong></p>
+                    </div>
+                    <div class="col-12">
+                        <ul class="list-inline list-unstyled">
+                            <li class="list-inline-item">
+                                <a href="https://www.facebook.com/lights.ie/" class="text-decoration-none" target="_blank">Facebook</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://www.instagram.com/lights.ie/" class="text-decoration-none" target="_blank">Instagram</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://nl.pinterest.com/lampandlightie/_created/" class="text-decoration-none" target="_blank">Pinterest</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-uppercase">Store Opening Hours</div>
+                        <div class="col-12"><strong>Monday - Friday</strong>: 9am - 6pm</div>
+                        <div class="col-12"><strong>Saturday</strong>: 10am - 5pm</div>
+                        <div class="col-12"><strong>Sunday</strong>: 12pm - 5pm</div>
+                        <div class="col-12"><strong>Call</strong>: 01-5557878</div>
+                        <div class="col-12">
+                            <a href="mailto:brightideas27@gmail.com" class="text-decoration-none">brightideas27@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
     {% block corejs %}
