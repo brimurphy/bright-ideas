@@ -1,3 +1,13 @@
+/* colors */
+/* 
+white: #fffafa;
+gold: #ffd700;
+black: #1f1f1f;
+blue: #176087;
+red: #d01114;
+grey: #e8eded;
+*/
+
 * {
     padding: 0;
     margin: 0;
@@ -9,5 +19,55 @@ html {
 }
 
 body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
 
+.header-container {
+    background-color: #fffafa;
+}
+
+.footer-container {
+    background-color: #1f1f1f;
+    color: #ffd700;
+}
+
+.heading-font {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Styles from Bulma icon-text class https://bulma.io/documentation/elements/icon/ */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0.5rem;
+}
+
+/* Remove bootstrap toggle caret */
+.dropdown-toggle::after {
+    display: none;
+}
+
+/* colors */
+
+.text-gold {
+    color: #ffd700;
+    transition: color 0.4s ease-in;
+    -webkit-transition: color 0.2s ease-out;
+    -moz-transition: color 0.2s ease-out;
+    -o-transition: color 0.2s ease-out;
+    -ms-transition: color 0.2s ease-out;
+}
+
+.text-black {
+    color: #1f1f1f;
+}
+
+a.text-gold:hover,
+a.text-gold:active {
+    color: #e8eded;
 }
