@@ -22,10 +22,15 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 18px;
+    background-color: #fffafa;
 }
 
 .header-container {
     background-color: #fffafa;
+}
+
+.main-container {
+    max-height: 80vh;
 }
 
 .footer-container {
@@ -35,6 +40,16 @@ body {
 
 .heading-font {
     font-family: 'Raleway', sans-serif;
+}
+
+.text-carousel {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    z-index: 9999;
+    color: #e8eded;
+    background: rgba(31, 31, 31, 0.7);
+    width: fit-content;
 }
 
 /* Styles from Bulma icon-text class https://bulma.io/documentation/elements/icon/ */
@@ -56,11 +71,6 @@ body {
 
 .text-gold {
     color: #ffd700;
-    transition: color 0.4s ease-in;
-    -webkit-transition: color 0.2s ease-out;
-    -moz-transition: color 0.2s ease-out;
-    -o-transition: color 0.2s ease-out;
-    -ms-transition: color 0.2s ease-out;
 }
 
 .text-black {
@@ -70,4 +80,33 @@ body {
 a.text-gold:hover,
 a.text-gold:active {
     color: #e8eded;
+}
+
+.btn-gold {
+    background-color: #ffd700;
+}
+
+.btn-gold:hover,
+.btn-gold:active {
+    background-color: #1f1f1f;
+    border: 1px solid #ffd700;
+    color: #ffd700;
+}
+
+h4 a.btn-gold {
+    width: fit-content;
+}
+
+.ease-in {
+    transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+}
+
+@media (min-width: 992px) {
+    .main-container {
+        padding-top: 100px;
+    }
 }

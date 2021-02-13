@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container container-header">
+    <div class="container">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -10,16 +10,63 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-sm">
+<!-- Hero carousel -->
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-7 col-md-6 my-auto">
+            <div class="col-12">
+                <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner main-container">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-4 g-0">
+                                    <img src="../media/hero-image-1.jpg" class="d-block w-100" alt="Dining Room Light">
+                                </div>
+                                <div class="col-4 g-0">
+                                    <img src="../media/hero-image-2.jpg" class="d-block w-100" alt="Dining Room Light">
+                                </div>
+                                <div class="col-4 g-0">
+                                    <img src="../media/hero-image-3.jpg" class="d-block w-100" alt="Dining Room Light">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-4 g-0">
+                                    <img src="../media/hero-image-4.jpg" class="d-block w-100" alt="Bedroom Light">
+                                </div>
+                                <div class="col-4 g-0">
+                                    <img src="../media/hero-image-5.jpg" class="d-block w-100" alt="Bedroom Light">
+                                </div>
+                                <div class="col-4 g-0">
+                                    <img src="../media/hero-image-6.jpg" class="d-block w-100" alt="Bedroom Light">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-4 g-0">
+                                    <img src="../media/hero-image-7.jpg" class="d-block w-100" alt="Garden Light">
+                                </div>
+                                <div class="col-4 g-0">
+                                    <img src="../media/hero-image-8.jpg" class="d-block w-100" alt="Garden Light">
+                                </div>
+                                <div class="col-4 g-0">
+                                    <img src="../media/hero-image-9.jpg" class="d-block w-100" alt="Garden Light">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            <div class="my-auto text-carousel rounded-3">
                 <h1 class="display-6 text-uppercase">
-                    Bring your Ideas to <span>Light</span>
+                    Bring your Ideas to <span class="text-gold">Light</span>
                 </h1>
-                <h4>
-                    <a href="#" class="shop-now-btn btn btn-lg rounded-3 text-uppercase">Shop Now</a>
+                <h4 class="text-center">
+                    <a href="#" class="ease-in shop-now-btn btn btn-lg btn-gold rounded-3 text-uppercase">Shop Now</a>
                 </h4>
             </div>
         </div>
-    </div>    
+    </div>
+    
 {% endblock %}
