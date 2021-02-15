@@ -39,6 +39,10 @@ body {
     color: #ffd700;
 }
 
+.promise-container {
+    background-color: #e7e7e7;
+}
+
 .block-divder {
     width: 60%;
     margin-left: 20%;
@@ -124,7 +128,8 @@ h4 a.btn-gold {
     text-shadow: 2px 1px #ffd700;
 }
 
-.text-blockquote {
+.text-blockquote,
+.text-promise {
     font-size: 1rem;
     font-weight: 300;
 }
