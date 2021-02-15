@@ -41,7 +41,8 @@
 
 <body>
 
-    <!-- header -->
+    <!-- Header -->
+
     <header class="container-fluid header-container fixed-top">
         <div id="topnav" class="row d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -49,23 +50,28 @@
                     <span><img src="../media/bright-ideas-logo.png" alt="Bright Ideas Logo"></span>
                 </a>
             </div>
+
+            <!-- Search -->
+
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="">
                     <div class="input-group w-100">
-                        <input type="text" placeholder=" Search.." name="q" class="form-control border border-1 rounded-pill">
-                        <div class="">
+                        <input type="text" placeholder="Search.." name="q" class="form-control border border-1 rounded-pill">
+                        <div class="m-0">
                             <button type="submit" class="form-control btn">
                                 <span class="icon"><i class="fas fa-search"></i></span> 
                             </button>
                         </div>
-                        
                     </div>
                 </form>
             </div>
+
+            <!-- User Profile -->
+
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-end">
                     <li class="list-inline-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="user-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="text-center">
                                 <div class="text-center icon text-black">
                                     <i class="fas fa-user-alt fa-lg"></i>
@@ -73,7 +79,7 @@
                                 <p class="my-0 text-black">My Profile</p>
                             </div>
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="user-dropdown">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                     <li><a class="dropdown-item" href="#">Project Management</a></li>
@@ -87,6 +93,9 @@
                             {% endif %}
                         </ul>
                     </li>
+                    
+                    <!-- Cart -->
+
                     <li class="list-inline-item">
                         <a href="#" class="nav-link">
                             <div class="text-center">
@@ -103,6 +112,21 @@
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <button class="navbar-toggler" 
+                        type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#main-nav" 
+                        aria-controls="main-nav" 
+                        aria-expanded="false" 
+                        aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/mobile-top-header.html' %}
+                {% include 'includes/main-nav.html' %}
+            </nav>
         </div>
     </header>
 
