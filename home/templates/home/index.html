@@ -10,7 +10,9 @@
 {% endblock %}
 
 {% block content %}
+
 <!-- Hero carousel -->
+
     <section class="container-fluid">
         <div class="row">
             <div class="col-12">
@@ -70,15 +72,16 @@
     </section>
 
     <!-- About Company -->
+
     <section class="container">
         <div class="row">
             <div class="col-12">
                 <h2 class="text-center text-uppercase py-1 mt-4 header-font">Who we are</h2>
-                <hr>
+                <hr class="block-divder">
             </div>
             <div class="row mt-4">
                 <div class="d-none d-md-block col-md-5">
-                    <img src="../media/about-image.jpg" class="about-img" alt="Many bulbs hanging from a ceiling">
+                    <img src="../media/about-image.jpg" class="about-img rounded-3" alt="Many bulbs hanging from a ceiling">
                 </div>
                 <div class="col-12 col-md-7 text-center align-text-bottom">
                     <p><strong class="text-glow">Bright Ideas</strong> are in business since 2001, located just off the Naas Road. 
@@ -94,17 +97,60 @@
         </div>
 
         <!-- reviews -->
+
         <div class="row">
-            <div class="col-6 col-md-4">
-                
+            <div class="col-12">
+                <h2 class="text-center text-uppercase py-1 mt-4 header-font">What you say</h2>
+                <hr class="block-divder">
             </div>
-            <div class="col-6 col-md-4">
-                
+            <div class="row">
+                <div class="col-6 col-md-4 text-center mb-3">
+                    <blockquote class="blockqoute text-blockquote">
+                        <p>This is a little gem just off the Naas Road. It’s packed with lights lamps and shades.
+                        Great design and a great range much larger shops would envy. A great friendly staff to help you choose.
+                        Well worth a visit.</p>
+                        <cite>
+                            <img
+                                class="reviews-image"
+                                src="../media//review-1.jpg"
+                                alt="Reviewer One"
+                            />
+                            Amelia-Rose Duncan
+                        </cite>
+                    </blockquote>
+                </div>
+                <div class="col-6 col-md-4 text-center text-blockquote mb-3">
+                    <blockquote class="blockqoute">
+                        <p>Thank you to Lisa and all at Bright Ideas! So grateful for the advise choosing my new over
+                        counter lights for my new kitchen. I Love them!
+                        </p>
+                        <cite>
+                            <img
+                                class="reviews-image"
+                                src="../media//review-2.jpg"
+                                alt="Reviewer Two"
+                            />
+                            Ted Donnelly
+                        </cite>
+                    </blockquote>
+                </div>
+                <div class="d-none d-md-block col-md-4 text-center text-blockquote mb-3">
+                    <blockquote class="blockqoute">
+                        <p>Really nice lights, great choice, really friendly and lovely staff who go over and beyond
+                            to make sure your happy with your choice of lights. Would highly recommend.
+                        </p>
+                        <cite>
+                            <img
+                                class="reviews-image"
+                                src="../media//review-3.jpg"
+                                alt="Reviewer Three"
+                            />
+                            Asha Richardson
+                        </cite>
+                    </blockquote>
+                </div>
             </div>
-            <div class="d-none d-md-block col-md-4">
-                
-            </div>
-        </div>
+        </div>    
     </section>
     
 {% endblock %}

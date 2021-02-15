@@ -39,6 +39,12 @@ body {
     color: #ffd700;
 }
 
+.block-divder {
+    width: 60%;
+    margin-left: 20%;
+    box-shadow: 2px 2px #ffd700;
+}
+
 .header-font {
     font-family: 'Raleway', sans-serif;
 }
@@ -67,7 +73,11 @@ body {
     margin: 0.5rem;
 }
 
-/* Remove bootstrap toggle caret */
+/* Remove bootstrap default styles */
+ul.text-lg-end {
+    margin-bottom: 0;
+}
+
 .dropdown-toggle::after {
     display: none;
 }
@@ -112,6 +122,15 @@ h4 a.btn-gold {
 
 .text-glow {
     text-shadow: 2px 1px #ffd700;
+}
+
+.text-blockquote {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.reviews-image {
+    border-radius: 50%;
 }
 
 @media (min-width: 992px) {
