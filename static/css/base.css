@@ -25,12 +25,12 @@ body {
     background-color: #fffafa;
 }
 
-.header-container {
+.nav-container {
     background-color: #fffafa;
     z-index: 9999;
 }
 
-.main-container {
+.carousel-container {
     max-height: 80vh;
 }
 
@@ -45,6 +45,7 @@ body {
 
 .block-divder {
     width: 60%;
+    color: #1f1f1f;
     margin-left: 20%;
     box-shadow: 2px 2px #ffd700;
 }
@@ -140,7 +141,7 @@ h4 a.btn-gold {
 }
 
 @media (min-width: 992px) {
-    .main-container {
-        padding-top: 80px;
+    .header-container {
+        padding-top: 130px;
     }
 }

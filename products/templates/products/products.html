@@ -11,12 +11,47 @@
 
 {% block content %}
 
-<!--  -->
+<!-- All Products -->
 
-    <section class="container">
+    <section class="container header-container">
         <div class="row">
-            <div class="col-12">
-                {{ products }}
+            <div class="col-12 text-center text-uppercase py-1 mt-4">
+                <hr class="block-divder">
+                <h2 class="header-font text-black">All Products</h2>
+                <hr class="block-divder">
+            </div>
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="card h-100 border-0">
+                            {% if product.image %}
+                                <a href="">
+                                    <img src="{{ product.image_url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
+                                </a>
+                            {% else %}
+                                <a href="">
+                                    <img src="{{ MEDIA_URL }}products/no-image.jpg" alt="{{ product.name }}" class="card-img-top img-fluid">
+                                </a>
+                            {% endif %}
+                            <div class="card-body">
+                                <p>{{ product.name }}</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col">
+                                        <p>{{ product.price }}</p>
+                                        {% if product.rating %}
+                                            <small class="text-muted">{{ product.rating }} / 5</small>
+                                        {% else %}
+                                            <small class="text-muted">No Rating</small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                
             </div>
         </div>
     </section>
