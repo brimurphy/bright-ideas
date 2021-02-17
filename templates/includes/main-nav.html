@@ -19,13 +19,30 @@
             Interior Lights
           </a>
           <ul class="dropdown-menu" aria-labelledby="interior-link">
-            <li><a class="dropdown-item" href="#">Dining Room</a></li>
-            <li><a class="dropdown-item" href="#">Bedroom Lights</a></li>
-            <li><a class="dropdown-item" href="#">Bathroom Lights</a></li>
-            <li><a class="dropdown-item" href="#">Kitchen Lights</a></li>
-            <li><a class="dropdown-item" href="#">Floor Lamps</a></li>
-            <li><a class="dropdown-item" href="#">Table Lamps</a></li>
-            <li><a class="dropdown-item" href="#">All Interior Lights</a></li>
+            <li>
+                <a class="dropdown-item" href="{% url 'products' %}?category=dining_room_lighting">Dining Room</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'products' %}?category=bedroom_lighting">Bedroom Lights</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'products' %}?category=bathroom_lighting">Bathroom Lights</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'products' %}?category=kitchen_lighting">Kitchen Lights</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'products' %}?category=floor_lamp">Floor Lamps</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'products' %}?category=table_lamp">Table Lamps</a>
+            </li>
+            <li>
+                <a class="dropdown-item"
+                   href="{% url 'products' %}?category=dining_room_lighting,bedroom_lighting,bathroom_lighting,kitchen_lighting,floor_lamp,table_lamp">
+                   All Interior Lights
+                </a>
+            </li>
           </ul>
         </li>
 
@@ -36,12 +53,27 @@
             Outdoor Lighting
           </a>
           <ul class="dropdown-menu" aria-labelledby="exterior-link">
-            <li><a class="dropdown-item" href="#">Outdoor Ceiling Lights</a></li>
-            <li><a class="dropdown-item" href="#">Outdoor Wall Lights</a></li>
-            <li><a class="dropdown-item" href="#">Outdoor Ground Spotlights</a></li>
-            <li><a class="dropdown-item" href="#">Outdoor Sensor Lights</a></li>
-            <li><a class="dropdown-item" href="#">Solar Lights</a></li>
-            <li><a class="dropdown-item" href="#">All Outdoor Lights</a></li>
+            <li>
+                <a class="dropdown-item" href="{% url 'products' %}?category=outdoor_ceiling_light">Outdoor Ceiling Lights</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'products' %}?category=outdoor_wall_light">Outdoor Wall Lights</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'products' %}?category=outdoor_recessed_lighting">Outdoor Ground Spotlights</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'products' %}?category=outdoor_sensor_lighting">Outdoor Sensor Lights</a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'products' %}?category=solar_lighting">Solar Lights</a>
+            </li>
+            <li>
+                <a class="dropdown-item" 
+                   href="{% url 'products' %}?category=outdoor_ceiling_light,outdoor_wall_light,outdoor_recessed_lighting,outdoor_sensor_lighting,solar_lighting">
+                   All Outdoor Lights
+                </a>
+            </li>
           </ul>
         </li>
 
@@ -52,9 +84,9 @@
             Bulbs
           </a>
           <ul class="dropdown-menu" aria-labelledby="bulbs-link">
-            <li><a class="dropdown-item" href="#">LED Bulbs</a></li>
-            <li><a class="dropdown-item" href="#">Halogen Bulbs</a></li>
-            <li><a class="dropdown-item" href="#">All Bulbs</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=led_bulb">LED Bulbs</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=halogen_bulb">Halogen Bulbs</a></li>
+            <li><a class="dropdown-item" href="{% url 'products' %}?category=led_bulb,halogen_bulb">All Bulbs</a></li>
           </ul>
         </li>
 
