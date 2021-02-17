@@ -27,7 +27,7 @@
         <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
+        <link rel="manifest" href="media/favicon/site.webmanifest">
 
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
@@ -54,7 +54,7 @@
             <!-- Search -->
 
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="">
+                <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input type="text" placeholder="Search.." name="q" class="form-control border border-1 rounded-pill">
                         <div class="m-0">
