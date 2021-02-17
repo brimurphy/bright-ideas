@@ -4,7 +4,7 @@
 
 View the live site [HERE]()
 
-View the GitHub repository [Here]()
+View the GitHub repository [Here](https://github.com/brimurphy/bright-ideas)
 
 View TESTING.md [HERE]()
 
@@ -85,9 +85,18 @@ View TESTING.md [HERE]()
 
   ### Colour Scheme
 
+  ![Colour Palette](/media/readme/color-palette.png)
+
+  The main colours of the site are **Eerie Black** (#1F1F1F) and **Snow White** (#fffafa).
+  These were chosen to give the user an easy on the eye and for good readability.
+  I've added a **Gold Web Golden** (#FFD700) for use on buttons and to create a *glow* effect, like a bulb, on
+  some elements.
+
   ### Typography
 
- 
+  For the heading font I have chosen to use [Raleway](https://fonts.google.com/specimen/Raleway?query=raleway&preview.text_type=custom)
+  and for the body text I have chosen [Montserrat](https://fonts.google.com/specimen/Montserrat?query=mon&preview.text_type=custom).
+  These are popular fonts with easy readability and I feel they compliment each other well.
 
   ### Wireframes
 
@@ -168,6 +177,32 @@ View TESTING.md [HERE]()
 
 
 ### Media 
+
+The Favicon image was sourced from [Free PNGimg](https://freepngimg.com/png/37016-light-bulb-transparent-background/icon)
+
+The hero image carousel contains 9 images, the dining room and bedroom light images are all from an article
+on [Elle Decor](https://www.elledecor.com/). The full article is [Here](https://www.elledecor.com/design-decorate/room-ideas/g11653791/dining-room-light-fixtures/).
+The hero images are:
+  1. [Hero Image 1](https://www.elledecor.com/design-decorate/room-ideas/g11653791/dining-room-light-fixtures/?slide=14)
+  2. [Hero Image 2](https://www.elledecor.com/design-decorate/room-ideas/g11653791/dining-room-light-fixtures/?slide=17)
+  3. [Hero Image 3](https://www.elledecor.com/design-decorate/room-ideas/g11653791/dining-room-light-fixtures/?slide=23)
+  4. [Hero Image 4](https://www.elledecor.com/design-decorate/room-ideas/a1716/bedroom-lighting-guide-a-50480/?slide=27)
+  5. [Hero Image 5](https://www.elledecor.com/design-decorate/room-ideas/a1716/bedroom-lighting-guide-a-50480/?slide=3)
+  6. [Hero Image 6](https://www.elledecor.com/design-decorate/room-ideas/a1716/bedroom-lighting-guide-a-50480/?slide=15)
+
+The final slide images are from [Raymie Ryan Lighting](https://raymieryanlighting.ie/exterior-lighting/) and can be found on the gallery of the exterior lighting page.
+
+The image in the about section is from [iStock](https://www.istockphoto.com/photos/edison-new-jersey)
+
+The three reviewer images can be found:
+  1. [Review 1](https://www.pexels.com/photo/woman-taking-selfie-while-smiling-1310522/)
+  2. [Review 2](https://www.pexels.com/photo/photo-of-man-taking-selfie-2406949/)
+  3. [Review 3](https://www.pexels.com/photo/woman-wearing-black-eyeglasses-1239291/)
+
+All product images are from [Lights.ie](https://www.lights.ie), I have used images from across the site to build my product database.
+
+The [No Image Available](https://www.istockphoto.com/illustrations/no-image-available).
+
 
 
 

@@ -17,9 +17,28 @@
         <div class="row">
             <div class="col-12 text-center text-uppercase py-1 mt-4">
                 <hr class="block-divder">
-                <h2 class="header-font text-black">All Products</h2>
+                <h2 class="header-font text-black">Products</h2>
                 <hr class="block-divder">
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-muted text-md-end text-center">
+                        {% if search or current_categories or current_sorting != 'None_None' %}
+                            <span class="small"><a href="{% url 'products' %}">All Products</a></span>
+                        {% endif %}
+                        <span class="small">{{ products|length }} Products{% if search %} found <strong>"{{ search }}"</strong>{% endif %}</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 offset-10">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
             <div class="row">
                 {% for product in products %}
                     <div class="col-12 col-md-6 col-lg-4">
