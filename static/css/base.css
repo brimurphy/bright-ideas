@@ -108,10 +108,26 @@ a.text-gold:active {
 }
 
 .btn-gold:hover,
-.btn-gold:active {
+.btn-gold:active,
+.btn-gold:focus {
     background-color: #1f1f1f;
     border: 1px solid #ffd700;
     color: #ffd700;
+    box-shadow: 1px 2px #ffd700;
+}
+
+.btn-black {
+    background-color: #1f1f1f;
+    color: #ffd700;
+}
+
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background-color: #ffd700;
+    border: 1px solid #1f1f1f;
+    color: #1f1f1f;
+    box-shadow: 1px 2px #1f1f1f;
 }
 
 h4 a.btn-gold {
@@ -138,6 +154,14 @@ h4 a.btn-gold {
 
 .reviews-image {
     border-radius: 50%;
+}
+
+.show-details {
+    display: block;
+}
+
+.hide-details {
+    display: none;
 }
 
 @media (min-width: 992px) {

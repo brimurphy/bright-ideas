@@ -21,7 +21,7 @@
                 <hr class="block-divder">
             </div>
         </div>
-        <div class="row">
+        <div class="row my-2">
             <div class="col-12 col-lg-6">
                 {% if product.image %}
                     <a href="{{ product.image.url }}" target="_blank">
@@ -44,6 +44,45 @@
                 </div>
             </div>
         </div>
+
+        <!-- Item details toggle -->
+        
+        <div class="row my-2 py-1">
+            <p>
+                <button class="btn btn-gold" type="button" data-bs-toggle="collapse" data-bs-target="#description" aria-expanded="false" aria-controls="description">Description</button>
+                <button class="btn btn-black" type="button" data-bs-toggle="collapse" data-bs-target="#details" aria-expanded="false" aria-controls="details">Additional Information</button> 
+            </p>
+            <div class="row">
+                
+                    <div class="col collapse" id="description">
+                        <div class="card card-body">
+                            <div class="col-12">
+                                {% if product.description %}
+                                    <p>{{ product.description }}</p>
+                                {% else %}
+                                    <p>Sorry, no details available at this time.</p>
+                                {% endif %}
+                            </div>
+                         </div>
+                    </div>
+                
+                    <div class="col collapse" id="details">
+                        <div class="card card-body">
+                            <div class="col-12">
+                                {% if product.ip_rating %}
+                                    <p>IP Rating: {{ product.ip_rating }}</p>
+                                {% endif %}
+                                {% if product.bulb_type %}
+                                    <p>Bulb Type: {{ product.bulb_type }}</p>
+                                {% endif %}
+                                {% if product.dimmable %}
+                                    <p>Dimmable: {{ product.dimmable }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
     
 {% endblock %}
