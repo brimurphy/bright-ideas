@@ -35,7 +35,7 @@
         <!-- Sort products -->
         <div class="row">
             <div class="col-2 offset-10 mb-2">
-                <select class="form-select text-black" aria-label="Default select example">
+                <select class="form-select text-black" id="sort-box" aria-label="Default select example">
                     <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by</option>
                     <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price: Low - High</option>
                     <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price: High - Low</option>
@@ -79,5 +79,53 @@
             {% endfor %} 
         </div>
     </section>
+    <!-- Back to top button -->
+    <div class="btt-btn">
+        <button id="btt" class="btn mx-auto my-auto">
+            <span class="icon">
+                <i class="far fa-arrow-circle-o-up text-black" aria-hidden="true"></i>
+            </span>
+        </button>
+    </div>
     
+{% endblock %}
+
+{% block postload_js %}
+    {{ block.super }}
+    <script type="text/javascript">
+    
+        $(window).scroll(function() {
+            let backUpButton = $(this).scrollTop();
+            if (backUpButton > 500) {
+                $(".btt-btn").fadeIn();
+            } else {
+                $(".btt-btn").fadeOut();
+            }
+        })
+
+        $("#btt").click(function() {
+            window.scrollTo(0,0)
+        })
+
+        $('#sort-box').change(function() {
+            let selector = $(this);
+            let currentUrl = new URL(window.location);
+
+            let sortVal = selector.val();
+            if(sortVal != "reset"){
+                let sort = sortVal.split("_")[0];
+                let direction = sortVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
 {% endblock %}

@@ -136,6 +136,27 @@ a.text-gold:active {
     box-shadow: 1px 2px #1f1f1f;
 }
 
+.btt-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    background-color: #ffd700;
+}
+
+.btt-btn:hover,
+.btt-btn:focus,
+.btt-btn:active {
+    box-shadow: 1px 2px #ffd700;
+}
+
+.btt-btn > button:hover,
+.btt-btn > button:focus,
+.btt-btn > button:active {
+    box-shadow: none;
+}
+
 h4 a.btn-gold {
     width: fit-content;
 }
