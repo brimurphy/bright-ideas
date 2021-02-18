@@ -189,6 +189,11 @@ h4 a.btn-gold {
     display: none;
 }
 
+.update-qty,
+.delete-item {
+    cursor: pointer;
+}
+
 @media (min-width: 992px) {
     .header-container {
         padding-top: 130px;
