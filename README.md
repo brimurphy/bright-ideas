@@ -85,7 +85,7 @@ View TESTING.md [HERE]()
 
   ### Colour Scheme
 
-  ![Colour Palette](/media/readme/color-palette.png)
+  ![Colour Palette](/media/color-palette.png)
 
   The main colours of the site are **Eerie Black** (#1F1F1F) and **Snow White** (#fffafa).
   These were chosen to give the user an easy on the eye and for good readability.
@@ -101,7 +101,7 @@ View TESTING.md [HERE]()
   ### Wireframes
 
   I've created the wireframes for this project using Balsamiq Wireframes
-  To view the wireframes of this project click [HERE]()
+  To view the wireframes of this project click [HERE](https://github.com/brimurphy/bright-ideas/tree/master/media/wireframes)
 
   ### Original Sketches
 
@@ -129,7 +129,7 @@ View TESTING.md [HERE]()
 
     - 
     - [Font Awesome](https://fontawesome.com/v4.7.0/icons/) 
-    - 
+    - [Cdnjs](https://cdnjs.com/libraries/font-awesome)
     - [Favicon](https://favicon.io/)
     - [JQuery](https://jquery.com/download/)
     - [Google Fonts](https://fonts.google.com/)
@@ -151,8 +151,10 @@ View TESTING.md [HERE]()
     - [RandomKeygen](https://randomkeygen.com/)
     - [Coolors](https://coolors.co/)
     - [Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab)
-    - [Remove BG](https://www.remove.bg/)
+    - [Table Convert](https://tableconvert.com/)
     - [Am I Responsive](http://ami.responsivedesign.is/)
+    - [Free Logo Design](https://www.freelogodesign.org/)
+    - [Name Generator](https://www.name-generator.org.uk/quick/)
     
 
 
@@ -174,6 +176,20 @@ View TESTING.md [HERE]()
 
 ### Content
 
+The content in the about section is orignally from [O'Briens Lighting](https://www.obrienslighting.com/about.irs) about section.
+The content has been edited to fit the project but is originally from there.
+
+The reviews in the review section are reviews of [House of Lights](https://www.houseoflights.ie/).
+
+The address I have used for the project is of a local light shop, [National Lighting](https://nationallighting.ie/).
+
+All the social links are all linked to [Lights.ie](https://www.lights.ie/) social accounts.
+
+All the products details for the project database are also from [Lights.ie](https://www.lights.ie/). 
+
+Reviewer names were generated with [Name Generator](https://www.name-generator.org.uk/quick/).
+
+The project logo is an original design and was created using [Free Logo Design](https://www.freelogodesign.org/).
 
 
 ### Media 
