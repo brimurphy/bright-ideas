@@ -42,6 +42,44 @@
                         <small class="text-muted">No Rating</small>
                     {% endif %}
                 </div>
+
+                <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="col-12">
+                            <p class="mt-2 text-black"><strong>Quantity: </strong></p>
+                            <div class="form-group w-50">
+                                <div class="input-group">
+                                    <input 
+                                        type="number" 
+                                        id="id-qty-{{ product.id }}"
+                                        class="form-control qty_input" 
+                                        name="quantity" 
+                                        value="1" 
+                                        min="1" 
+                                        max="99" 
+                                        data-item-id="{{ product.id }}"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 my-2">
+                        <a href="{% url 'products' %}" class="btn btn-black">
+                            <span class="icon">
+                                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                            </span>
+                        <span class="text-uppercase">Keep Shopping</span>
+                        </a>
+                        <button type="submit" class="btn btn-gold text-uppercase">
+                            <span class="text-uppercase">Add to Cart</span>
+                            <span class="icon">
+                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </form>
             </div>
         </div>
 
@@ -53,36 +91,35 @@
                 <button class="btn btn-black p-2" type="button" data-bs-toggle="collapse" data-bs-target="#details" aria-expanded="false" aria-controls="details">Additional Information</button> 
             </p>
             <div class="row">
+                <div class="col collapse" id="description">
+                    <div class="card card-body">
+                        <div class="col-12">
+                            {% if product.description %}
+                                <p>{{ product.description }}</p>
+                            {% else %}
+                                <p>Sorry, no details available at this time.</p>
+                            {% endif %}
+                        </div>
+                        </div>
+                </div>
                 
-                    <div class="col collapse" id="description">
-                        <div class="card card-body">
-                            <div class="col-12">
-                                {% if product.description %}
-                                    <p>{{ product.description }}</p>
-                                {% else %}
-                                    <p>Sorry, no details available at this time.</p>
-                                {% endif %}
-                            </div>
-                         </div>
-                    </div>
-                
-                    <div class="col collapse" id="details">
-                        <div class="card card-body">
-                            <div class="col-12">
-                                {% if product.ip_rating %}
-                                    <p>IP Rating: {{ product.ip_rating }}</p>
-                                {% endif %}
-                                {% if product.bulb_type %}
-                                    <p>Bulb Type: {{ product.bulb_type }}</p>
-                                {% endif %}
-                                {% if product.dimmable %}
-                                    <p>Dimmable: {{ product.dimmable }}</p>
-                                {% endif %}
-                            </div>
+                <div class="col collapse" id="details">
+                    <div class="card card-body">
+                        <div class="col-12">
+                            {% if product.ip_rating %}
+                                <p>IP Rating: {{ product.ip_rating }}</p>
+                            {% endif %}
+                            {% if product.bulb_type %}
+                                <p>Bulb Type: {{ product.bulb_type }}</p>
+                            {% endif %}
+                            {% if product.dimmable %}
+                                <p>Dimmable: {{ product.dimmable }}</p>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
     
 {% endblock %}
