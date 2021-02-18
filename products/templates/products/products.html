@@ -20,58 +20,63 @@
                 <h2 class="header-font text-black">Products</h2>
                 <hr class="block-divder">
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <p class="text-muted text-md-end text-center">
-                        {% if search or current_categories or current_sorting != 'None_None' %}
-                            <span class="small"><a href="{% url 'products' %}">All Products</a></span>
-                        {% endif %}
-                        <span class="small">{{ products|length }} Products{% if search %} found <strong>"{{ search }}"</strong>{% endif %}</span>
-                    </p>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p class="text-muted text-md-end text-center">
+                    {% if search or current_categories or current_sorting != 'None_None' %}
+                        <span class="small text-black"><a href="{% url 'products' %}" class="text-decoration-none text-black">All Products</a> |</span>
+                    {% endif %}
+                    <span class="small text-black">{{ products|length }} Products{% if search %} found <strong>"{{ search }}"</strong>{% endif %}</span>
+                </p>
             </div>
-            <div class="row">
-                <div class="col-2 offset-10">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-            <div class="row">
-                {% for product in products %}
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="card h-100 border-1">
-                            {% if product.image %}
-                                <a href="{% url 'product_item' product.id %}">
-                                    <img src="{{ product.image_url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
-                                </a>
-                            {% else %}
-                                <a href="{% url 'product_item' product.id %}">
-                                    <img src="{{ MEDIA_URL }}products/no-image.jpg" alt="{{ product.name }}" class="card-img-top img-fluid">
-                                </a>
-                            {% endif %}
-                            <div class="card-body">
-                                <p>{{ product.name }}</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col">
-                                        <p>€{{ product.price }}</p>
-                                        {% if product.rating %}
-                                            <small class="text-muted">{{ product.rating }} / 5</small>
-                                        {% else %}
-                                            <small class="text-muted">No Rating</small>
-                                        {% endif %}
-                                    </div>
+        </div>
+
+        <!-- Sort products -->
+        <div class="row">
+            <div class="col-2 offset-10 mb-2">
+                <select class="form-select text-black" aria-label="Default select example">
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by</option>
+                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price: Low - High</option>
+                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price: High - Low</option>
+                    <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating: Low - High</option>
+                    <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating: High - Low</option>
+                    <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name: A - Z</option>
+                    <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name: Z - A</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            {% for product in products %}
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 border-1">
+                        {% if product.image %}
+                            <a href="{% url 'product_item' product.id %}">
+                                <img src="{{ product.image_url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
+                            </a>
+                        {% else %}
+                            <a href="{% url 'product_item' product.id %}">
+                                <img src="{{ MEDIA_URL }}products/no-image.jpg" alt="{{ product.name }}" class="card-img-top img-fluid">
+                            </a>
+                        {% endif %}
+                        <div class="card-body">
+                            <p>{{ product.name }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col">
+                                    <p>€{{ product.price }}</p>
+                                    {% if product.rating %}
+                                        <small class="text-muted">{{ product.rating }} / 5</small>
+                                    {% else %}
+                                        <small class="text-muted">No Rating</small>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-                
-            </div>
+                </div>
+            {% endfor %} 
         </div>
     </section>
     
