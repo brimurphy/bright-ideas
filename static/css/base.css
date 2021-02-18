@@ -104,6 +104,10 @@ select.form-select:focus {
     color: #1f1f1f;
 }
 
+.text-red {
+    color: #d01114;
+}
+
 a.text-gold:hover,
 a.text-gold:active {
     color: #e8eded;
