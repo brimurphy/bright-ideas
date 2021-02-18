@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container">
+    <div class="container header-container">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-12">
                 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner carouysel-container header-container">
+                    <div class="carousel-inner carouysel-container">
                         <div class="carousel-item active">
                             <div class="row">
                                 <div class="col-4 g-0">
@@ -161,7 +161,7 @@
         <div class="row py-2">
             <div class="col-12 col-sm-4 text-center mt-2">
                 <h4 class="header-font text-black">Free delivery</h4>
-                <p class="text-muted text-promise">For orders over €100</p>
+                <p class="text-muted text-promise">For orders over €{{ free_delivery }}</p>
             </div>
             <div class="col-12 col-sm-4 text-center mt-2">
                 <h4 class="header-font text-black">Price Match Guarantee</h4>
@@ -171,7 +171,7 @@
             </div>      
             <div class="col-12 col-sm-4 text-center mt-2">
                 <h4 class="header-font text-black">Free Returns</h4>
-                <p class="text-muted text-promise"> Within 60 days</p>
+                <p class="text-muted text-promise">Within 60 days</p>
             </div>
         </div>
     </section>

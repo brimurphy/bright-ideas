@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <section class="container">
+        <div class="row">
+            <div class="col-12 text-center text-uppercase py-1 mt-4">
+                <hr class="block-divder">
+                <h2 class="header-font text-black">Shopping Cart</h2>
+                <hr class="block-divder">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                {% if bag_items %}
+                    <div class="table-responsive rounded">
+
+                    </div>
+                {% else %}
+                    <p class="text-black">You don't have anything in your cart.</p>
+                    <a href="{% url 'products' %}" class="btn btn-lg my-2 btn-black text-black">
+                        <span class="icon">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </span>
+                        <span class="text-uppercase">Keep Shopping</span>
+                    </a>
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-6">
+                
+            </div>
+        </div>
+       
+    </section>
+
+{% endblock %}
