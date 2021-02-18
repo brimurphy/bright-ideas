@@ -21,9 +21,9 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
-                {% if bag_items %}
+                {% if cart_items %}
                     <div class="table-responsive rounded">
-
+                        {{ cart_items }}
                     </div>
                 {% else %}
                     <p class="text-black">You don't have anything in your cart.</p>
