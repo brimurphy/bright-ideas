@@ -98,6 +98,10 @@ select.form-select:focus {
     box-shadow: none;
 }
 
+div.toast-container {
+    z-index: 9999;
+}
+
 /* colors */
 
 .text-gold {
