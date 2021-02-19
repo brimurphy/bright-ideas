@@ -94,6 +94,10 @@ select.form-select:focus {
     border-color: #1f1f1f;
 }
 
+.btn:focus {
+    box-shadow: none;
+}
+
 /* colors */
 
 .text-gold {
@@ -118,8 +122,7 @@ a.text-gold:active {
 }
 
 .btn-gold:hover,
-.btn-gold:active,
-.btn-gold:focus {
+.btn-gold:active {
     background-color: #1f1f1f;
     border: 1px solid #ffd700;
     color: #ffd700;
@@ -132,8 +135,7 @@ a.text-gold:active {
 }
 
 .btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
+.btn-black:active {
     background-color: #ffd700;
     border: 1px solid #1f1f1f;
     color: #1f1f1f;

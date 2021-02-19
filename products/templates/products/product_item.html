@@ -21,7 +21,7 @@
                 <hr class="block-divder">
             </div>
         </div>
-        <div class="row my-2">
+        <div class="row my-5 text-center text-lg-start">
             <div class="col-12 col-lg-6">
                 {% if product.image %}
                     <a href="{{ product.image.url }}" target="_blank">
@@ -101,7 +101,7 @@
                     <div class="form-row">
                         <div class="col-12">
                             <p class="mt-2 text-black"><strong>Quantity: </strong></p>
-                            <div class="form-group w-50">
+                            <div class="form-group w-50 mx-auto mx-lg-0">
                                 <div class="input-group">
 
                                     <!-- Decrease quantity -->
@@ -134,19 +134,25 @@
                     </div>
 
                     <!-- CTA buttons -->
-                    <div class="col-12 my-2">
-                        <a href="{% url 'products' %}" class="btn btn-black">
-                            <span class="icon">
-                                <i class="fa fa-angle-left" aria-hidden="true"></i>
-                            </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                        </a>
-                        <button type="submit" class="btn btn-gold text-uppercase">
-                            <span class="text-uppercase">Add to Cart</span>
-                            <span class="icon">
-                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                            </span>
-                        </button>
+                    <div class="row">
+                        <div class="d-grid gap-2 col-12 col-lg-6 my-2">
+                            <a href="{% url 'products' %}" class="btn btn-black">
+                                <span class="icon">
+                                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                </span>
+                                <span class="text-uppercase">Keep Shopping</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="d-grid gap-2 col-12 col-lg-6 my-2">
+                            <button type="submit" class="btn btn-gold text-uppercase">
+                                <span class="text-uppercase">Add to Cart</span>
+                                <span class="icon">
+                                    <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
@@ -162,12 +168,10 @@
     <script type="text/javascript">
         $('#description').click(function() {
             $('#description-info').toggleClass('collapse');
-            $('#additional-info').addClass('collapsed');
             $('#details').removeClass('show');
         });
         $('#additional-info').click(function() {
             $('#details').toggleClass('collapse');
-            $('#description').addClass('collapsed');
             $('#description-info').removeClass('show');
         });
     </script>
