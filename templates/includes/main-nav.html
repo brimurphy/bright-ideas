@@ -1,15 +1,9 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown mx-2">
-          <a class="nav-link dropdown-toggle header-font text-black text-glow" href="#" id="all-products-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item mx-2">
+          <a class="nav-link header-font text-black text-glow" href="{% url 'products' %}" id="all-products-link">
             All Products
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="all-products-link">
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">By Price</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">By Rating</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}?sort=category&direction=asc">By Category</a></li>
-            <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
-          </ul>
+          </a>        
         </li>
 
         <!-- Interior Lighting -->

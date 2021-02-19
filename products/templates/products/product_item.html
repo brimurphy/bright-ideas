@@ -43,6 +43,59 @@
                     {% endif %}
                 </div>
 
+                <!-- Info Toggle -->
+                <div class="row my-2 py-1">
+                    <div class="col">
+                    <p>
+                        <button class="btn btn-gold p-2 me-2"
+                            id="description"
+                            type="button" data-bs-toggle="collapse" 
+                            data-bs-target="#description-info" 
+                            aria-expanded="false" 
+                            aria-controls="description">
+                            Description
+                        </button>
+                        <button class="btn btn-black p-2"
+                            id="additional-info"
+                            type="button" data-bs-toggle="collapse" 
+                            data-bs-target="#details" 
+                            aria-expanded="false" 
+                            aria-controls="details">
+                            Additional Information
+                        </button> 
+                    </p>
+                    </div>
+                    <div class="row">
+                        <div class="col collapse text-center text-black" id="description-info">
+                            <div class="card card-body">
+                                <div class="col-12">
+                                    {% if product.description %}
+                                        <p>{{ product.description }}</p>
+                                    {% else %}
+                                        <p>Sorry, no details available at this time.</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                            
+                        <div class="col collapse text-center text-black" id="details">
+                            <div class="card card-body">
+                                <div class="col-12">
+                                    {% if product.ip_rating %}
+                                        <p>IP Rating: {{ product.ip_rating }}</p>
+                                    {% endif %}
+                                    {% if product.bulb_type %}
+                                        <p>Bulb Type: {{ product.bulb_type }}</p>
+                                    {% endif %}
+                                    {% if product.dimmable %}
+                                        <p>Dimmable: {{ product.dimmable }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
@@ -80,46 +133,7 @@
                         </div>
                     </div>
 
-                            <!-- Item details toggle -->
-        
-                    <div class="row my-2 py-1">
-                        <div class="col">
-                        <p>
-                            <button class="btn btn-gold p-2 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#description" aria-expanded="false" aria-controls="description">Description</button>
-                            <button class="btn btn-black p-2" type="button" data-bs-toggle="collapse" data-bs-target="#details" aria-expanded="false" aria-controls="details">Additional Information</button> 
-                        </p>
-                        </div>
-                        <div class="row">
-                            <div class="col collapse text-center text-black" id="description">
-                                <div class="card card-body">
-                                    <div class="col-12">
-                                        {% if product.description %}
-                                            <p>{{ product.description }}</p>
-                                        {% else %}
-                                            <p>Sorry, no details available at this time.</p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col collapse text-center text-black" id="details">
-                                <div class="card card-body">
-                                    <div class="col-12">
-                                        {% if product.ip_rating %}
-                                            <p>IP Rating: {{ product.ip_rating }}</p>
-                                        {% endif %}
-                                        {% if product.bulb_type %}
-                                            <p>Bulb Type: {{ product.bulb_type }}</p>
-                                        {% endif %}
-                                        {% if product.dimmable %}
-                                            <p>Dimmable: {{ product.dimmable }}</p>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    <!-- CTA buttons -->
                     <div class="col-12 my-2">
                         <a href="{% url 'products' %}" class="btn btn-black">
                             <span class="icon">
@@ -145,4 +159,16 @@
 {% block postload_js %}
     {{ block.super }}
     {% include 'products/includes/quantity-input-script.html' %}
+    <script type="text/javascript">
+        $('#description').click(function() {
+            $('#description-info').toggleClass('collapse');
+            $('#additional-info').addClass('collapsed');
+            $('#details').removeClass('show');
+        });
+        $('#additional-info').click(function() {
+            $('#details').toggleClass('collapse');
+            $('#description').addClass('collapsed');
+            $('#description-info').removeClass('show');
+        });
+    </script>
 {% endblock %}
