@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load cart_calc_tool %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -83,7 +84,7 @@
                                         <a class="delete-item text-decoration-none float-end" id="delete_{{ item.item_id }}"><small>Remove</small></a>
                                     </td>
                                     <td class="p2">
-                                        <p class="my-0 text-black">€{{ item.product.price }}</p>
+                                        <p class="my-0 text-black">€{{ item.product.price | subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -151,11 +152,10 @@
         $('.delete-item').click(function(e) {
             let csrfToken = "{{ csrf_token }}";
             let itemId = $(this).attr('id').split('delete_')[1];
-            let url = `/cart/delete/${itemId}`;
+            let url = `/cart/delete/${itemId}/`;
             let data = {'csrfmiddlewaretoken': csrfToken};
 
-            $.post(url, data)
-             .done(function() {
+            $.post(url, data).done(function() {
                 location.reload();
             });
         })
