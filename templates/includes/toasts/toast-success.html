@@ -1,11 +1,51 @@
 <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-bs-autohide="false">
-  <div class="toast-header">
-    <img src="#" class="rounded me-2" alt="#">
-    <strong class="me-auto">Bootstrap</strong>
-    <small></small>
-    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-  </div>
-  <div class="toast-body">
-    {{ message }}
-  </div>
+    <div class="toast-header">
+        <img src="#" class="rounded me-2" alt="#">
+        <strong class="me-auto">Bootstrap</strong>
+        <small></small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        {{ message }}
+    </div>
+    {% if grand_total %}
+        <p class="header-font text-black">Your Bag ({{ product_count }})</p>
+        <div class="toast-cart">
+            {% for item in cart_items %}
+                <div class="row">
+                    <div class="col-3 my-2">
+                        <img src="{{ item.product.image_url }}" alt="{{ product.name }}" class="w-100">
+                    </div>
+                    <div class="col-9">
+                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                        <p class="my-0 small">Qty: {{ item.quantity }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="text-black">
+                    <strong>Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}
+                        <span>€{{ total|floatformat:2 }}</span>
+                    </strong>
+                </p>
+                {% if free_delivery_delta > 0 %}
+                    <p class="text-center text-black">
+                        Spend <strong>€{{ free_delivery_delta }}</strong> more for free delivery!
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-grid m-2">
+                <a href="{% url 'view_cart' %}" class="btn btn-black btn-block">
+                    <span class="text-uppercase">Secure Checkout</span>
+                    <span class="icon">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                    </span>
+                </a>
+            </div>  
+        </div>
+    {% endif %}
 </div>
