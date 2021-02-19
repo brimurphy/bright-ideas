@@ -133,7 +133,17 @@
     {% if messages %}
         <div class="toast-container position-absolute top-0 end-0 p-3">
             {% for message in messages %}
-                {% include 'includes/toasts/toast-success.html' %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast-error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast-warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast-success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast-info.html' %}
+                    {% endif %}
+                {% endwith %}
             {% endfor %}
         </div>
     {% endif %}
@@ -242,7 +252,10 @@
 
     {% block postload_js %}
     <script type="text/javascript">
-        $('.toast').toggle('show');
+        $('.toast').addClass('show');
+        $('.btn-close').click(function(){
+          $(this).closest('.toast').toast('hide')
+        })
     </script>
     {% endblock %}
 

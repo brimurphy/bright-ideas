@@ -24,7 +24,7 @@
         <div class="row my-5 text-center text-lg-start">
             <div class="col-12 col-lg-6">
                 {% if product.image %}
-                    <a href="{{ product.image.url }}" target="_blank">
+                    <a href="{{ product.image_url }}" target="_blank">
                         <img src="{{ product.image_url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
                     </a>
                 {% else %}
