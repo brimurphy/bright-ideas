@@ -47,7 +47,8 @@
                                         <p class="my-0 text-black">€{{ item.product.price }}</p>
                                     </td>
                                     <td class="p2">
-                                        <form method="POST" action="" class="form update-form">
+                                        <form method="POST" action="{% url 'adjust_cart' item.item_id %}" class="form update-form">
+                                            {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
 
@@ -154,7 +155,7 @@
             let data = {'csrfmiddlewaretoken': csrfToken};
 
             $.post(url, data)
-            .done(function() {
+             .done(function() {
                 location.reload();
             });
         })
