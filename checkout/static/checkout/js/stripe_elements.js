@@ -47,32 +47,69 @@ form.addEventListener('submit', function(ev) {
     $('#submit-btn').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#spinner').fadeToggle(100);
-    // If the client secret was rendered server-side as a data-secret attribute
-    // on the <form> element, you can retrieve it here by calling `form.dataset.secret`
-    stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-        card: card,
-    }
-  }).then(function(result) {
-    if (result.error) {
-        var displayError = document.getElementById('card-errors');
-        var html = `
-            <span class="icon text-red" role="alert">
-                <i class="fas fa-times"></i>
-            </span>
-            <span class="small text-red">${result.error.message}</span>`
-        ;
-        $(displayError).html(html);
-        $('#payment-form').fadeToggle(100);
-        $('#spinner').fadeToggle(100);
-        card.update({'disabled': false});
-        $('#submit-btn').attr('disabled', false);
     
-    } else {
-        // The payment has been processed!
-        if (result.paymentIntent.status === 'succeeded') {
-            form.submit();
+    var saveInfo = Boolean($('#save-info').attr('checked'));
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    var postData = {
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+        'save_info': saveInfo,
+    };
+    var url = '/checkout/cache_checkout_data/';
+
+    $.post(url, postData).done(function() {
+        stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+            card: card,
+            billing_details: {
+                name: $.trim(form.full_name.value),
+                phone: $.trim(form.phone_number.value),
+                email: $.trim(form.email.value),
+                address: {
+                    line1: $.trim(form.street_address1.value),
+                    line2: $.trim(form.street_address1.value),
+                    city: $.trim(form.town_or_city.value),
+                    county: $.trim(form.county.value),
+                    country: $.trim(form.country.value),
+                }
+            }
+        },
+        shipping: {
+            name: $.trim(form.full_name.value),
+            phone: $.trim(form.phone_number.value),
+            email: $.trim(form.email.value),
+            address: {
+                line1: $.trim(form.street_address1.value),
+                line2: $.trim(form.street_address1.value),
+                city: $.trim(form.town_or_city.value),
+                postcode: $.trim(form.postcode.value),
+                county: $.trim(form.county.value),
+                country: $.trim(form.country.value),
         }
     }
-  });
+        }).then(function(result) {
+            if (result.error) {
+                var displayError = document.getElementById('card-errors');
+                var html = `
+                    <span class="icon text-red" role="alert">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <span class="small text-red">${result.error.message}</span>`
+                ;
+                $(displayError).html(html);
+                $('#payment-form').fadeToggle(100);
+                $('#spinner').fadeToggle(100);
+                card.update({'disabled': false});
+                $('#submit-btn').attr('disabled', false);
+            
+            } else {
+                // The payment has been processed!
+                if (result.paymentIntent.status === 'succeeded') {
+                    form.submit();
+                }
+            }
+        });
+    }).fail(function() {
+        location.reload();
+    })
 });
