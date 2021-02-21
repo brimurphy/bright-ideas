@@ -49,7 +49,7 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_cart'))
 
-            request.session['save_info'] = 'save-info' in request.POST
+            request.session['save-info'] = 'save-info' in request.POST
             return redirect(
                 reverse('checkout_success', args=[order.order_number]))
         else:
@@ -88,7 +88,7 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     # Handle successful checkouts
-    save_info = request.session.get('save_info')
+    save_info = request.session.get('save-info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Your order has been processes! \
         Your order number is {order_number} and \
