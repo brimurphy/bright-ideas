@@ -28,7 +28,7 @@
         <div class="row">
 
             <!-- Cart summary -->
-            <div class="col-12 col-md-6 order-md-last">
+            <div class="col-12 col-md-6 order-md-last mt-2">
                <p class="text-black">Order Summary ({{ product_count }})</p>
                <div class="row">
                    <div class="col-7 offset-2">
@@ -64,8 +64,7 @@
 
             <!-- Checkout Form -->
 
-            <div class="col-12 col-md-6">
-                <p class="text-muted">Fill out form to complete your order</p>
+            <div class="col-12 col-md-6 mt-2">
                 {% load crispy_forms_tags %}
                 <form method="post" action="{% url 'checkout' %}" id="payment-form">
                     {% csrf_token %}
@@ -88,8 +87,8 @@
                                 <label class="form-check-label" for="inlineCheckbox1">Save delivery details</label>
                                 <input class="form-check-input" type="checkbox" id="save-info" name="save-info" checked>
                             {% else %}
-                                <a href="{% url 'account_signup' %}">Create an Account</a> or
-                                <a href="{% url 'account_login' %}">Login</a> to save your details
+                                <a class="text-decoration-none" href="{% url 'account_signup' %}">Create an Account</a> or
+                                <a class="text-decoration-none" href="{% url 'account_login' %}">Login</a> to save your details
                             {% endif %}
                         </div>
                     </fieldset>
@@ -105,7 +104,7 @@
 
                     <!-- CTA buttons -->
                     <div class="row">
-                        <div class="d-grid gap-2 col-12 col-lg-6 my-2">
+                        <div class="d-grid gap-2 col-12 col-md-6 offset-lg-3 my-2">
                             <a href="{% url 'view_cart' %}" class="btn btn-black">
                                 <span class="icon">
                                     <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -115,19 +114,23 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="d-grid gap-2 col-12 col-lg-6 my-2">
+                        <div class="d-grid gap-2 col-12 col-md-6 offset-lg-3 my-2">
                             <button type="submit" class="btn btn-gold text-uppercase" id="submit-btn">
                                 <span class="text-uppercase">Complete Order</span>
                                 <span class="icon">
                                     <i class="fa fa-lock" aria-hidden="true"></i>
                                 </span>
                             </button>
-                            <p class="small">
-                                <span class="icon">
-                                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                </span>
-                                <span class="text-black">Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong></span>
-                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center text-red">
+                                <p class="small">
+                                    <span class="icon">
+                                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                                    </span>
+                                    <span>Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong></span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -136,4 +139,11 @@
        
     </section>
 
+{% endblock %}
+
+{% block postload_js %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

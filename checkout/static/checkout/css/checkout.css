@@ -1,0 +1,35 @@
+.StripeElement,
+.stripe-style-input {
+    box-sizing: border-box;
+    border: 1px solid #1f1f1f;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus {
+    border: 1px solid #1f1f1f;
+    box-shadow: 1px 2px 4px #ffd700;
+}
+
+.StripeElement--complete {
+    border: 1px solid #176087;
+    box-shadow: 1px 2px 4px #176087;
+}
+
+.StripeElement--invalid {
+    border-color: #d01114;
+    box-shadow: 1px 2px 4px #d01114;
+}
+
+/* Chrome and Safari only */
+.StripeElement--webkit-autofill {
+    background-color: #fffafa;
+}
+
+#card-element,
+.stripe-style-input {
+    border-radius: .25rem;
+    padding: 12px;
+    height: 40px;
+    width: 100%;
+    background: #fff;
+}
