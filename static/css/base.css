@@ -27,7 +27,7 @@ body {
 
 .nav-container {
     background-color: #fffafa;
-    z-index: 9999;
+    z-index: 1200;
 }
 
 .carousel-container {
