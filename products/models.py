@@ -31,8 +31,9 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     ip_rating = models.CharField(max_length=4, null=True, blank=True)
     bulb_type = models.CharField(max_length=20, null=True, blank=True)
-    dimmable = models.BooleanField(default=False)
-    clearance = models.BooleanField(default=False)
+    is_dimmable = models.BooleanField(default=False)
+    is_clearance = models.BooleanField(default=False)
+    is_multipack = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

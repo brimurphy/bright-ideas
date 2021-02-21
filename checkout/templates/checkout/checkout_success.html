@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <section class="container">
+        <div class="row">
+            <div class="col-12 text-center text-uppercase py-1 mt-4">
+                <hr class="block-divder">
+                <h2 class="header-font text-black">Thank you for your Custom</h2>
+                <hr class="block-divder">
+                <p class="text-black">A confirmation email has been sent to <strong>{{ order.email }}</strong></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-7">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-7 text-end">
+                <a href="{% url 'products' %}" class="btn btn-black my-2">
+                    <span class="icon">
+                        <i class="fas fa-box-open"></i>
+                    </span>
+                    <span class="text-uppercase">Forget something?</span>
+                </a>
+            </div>
+        </div>
+       
+    </section>
+
+{% endblock %}
