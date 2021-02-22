@@ -25,9 +25,13 @@ body {
     font-weight: 400;
     font-size: 18px;
     background-color: #fffafa;
-    position: relative;
-    min-height: 100vh;
-    overflow-x: hidden;
+    height:100vh;
+    display:flex; 
+  flex-direction:column; 
+}
+
+footer{
+  margin-top:auto; 
 }
 
 .nav-container {
@@ -40,8 +44,7 @@ body {
 }
 
 .footer-container {
-    position: absolute;
-    bottom: 0;
+    
     background-color: #1f1f1f;
     color: #ffd700;
 }
