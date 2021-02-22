@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Product, Category
+from .forms import ProductForm
 
 
 # Create your views here.
@@ -54,6 +55,7 @@ def all_products(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    template = 'products/products.html'
     context = {
         'products': products,
         'search': query,
@@ -61,7 +63,7 @@ def all_products(request):
         'current_sorting': current_sorting,
     }
 
-    return render(request, 'products/products.html', context)
+    return render(request, template, context)
 
 
 def product_item(request, product_id):
@@ -69,8 +71,20 @@ def product_item(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
+    template = 'products/product_item.html'
     context = {
         'product': product,
     }
 
-    return render(request, 'products/product_item.html', context)
+    return render(request, template, context)
+
+
+def add_products(request):
+    # Allow admin to add products
+    form = ProductForm()
+    template = 'products/add_products.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
