@@ -64,7 +64,7 @@
                             <p>{{ item.product.name }}</p>
                         </div>
                         <div class="col-12 col-md-8 text-end">
-                            <p>{{ item.quantity }} @ €{{ item.price }} each</p>
+                            <p>{{ item.quantity }} @ €{{ item.product.price }} each</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -165,7 +165,7 @@
                         <p>{{ order.order_total }}</p>
                     </div>
                 </div>
-                {% if order.delivery_cost %}
+                <!-- {% if order.delivery_cost %} -->
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <p>Delivery</p>
@@ -174,7 +174,7 @@
                             <p>{{ order.delivery_cost }}</p>
                         </div>
                     </div>
-                {% endif %}
+                <!-- {% endif %} -->
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p>Total Paid</p>

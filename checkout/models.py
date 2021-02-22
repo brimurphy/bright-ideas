@@ -26,7 +26,8 @@ class Order(models.Model):
     grand_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0)
     original_cart = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    stripe_pid = models.CharField(
+        max_length=254, null=False, blank=False, default='')
 
     def _unique_order_number(self):
         # Generate unique order number
@@ -38,7 +39,7 @@ class Order(models.Model):
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_cost = (
-                self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE/100)
+                self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         else:
             self.delivery_cost = 0
         self.grand_total = self.order_total + self.delivery_cost
@@ -51,6 +52,7 @@ class Order(models.Model):
         """
         if not self.order_number:
             self.order_number = self._unique_order_number()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.order_number
