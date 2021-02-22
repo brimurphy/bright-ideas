@@ -187,12 +187,21 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-7 text-end">
-                <a href="{% url 'products' %}" class="btn btn-black my-2">
-                    <span class="icon">
-                        <i class="fas fa-box-open"></i>
-                    </span>
-                    <span class="text-uppercase">Forget something?</span>
-                </a>
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn btn-black my-2">
+                        <span class="icon">
+                            <i class="fas fa-angle-left"></i>
+                        </span>
+                        <span class="text-uppercase">Back to Profile</span>
+                    </a>
+                {% else %}
+                    <a href="{% url 'products' %}" class="btn btn-black my-2">
+                        <span class="icon">
+                            <i class="fas fa-box-open"></i>
+                        </span>
+                        <span class="text-uppercase">Forget something?</span>
+                    </a>
+                {% endif %}
             </div>
         </div>
        
