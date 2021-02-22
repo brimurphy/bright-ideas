@@ -82,7 +82,7 @@
                         <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="user-dropdown">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <li><a class="dropdown-item" href="#">Project Management</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'add_products' %}">Project Management</a></li>
                                 {% endif %}
                                 <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Tradespeople</a></li>
