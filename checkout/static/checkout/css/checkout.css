@@ -1,5 +1,6 @@
 .StripeElement,
 .stripe-style-input {
+    color: #1f1f1f;
     box-sizing: border-box;
     border: 1px solid #1f1f1f;
 }
@@ -32,6 +33,20 @@
     height: 40px;
     width: 100%;
     background: #fff;
+}
+.stripe-style-input#id_country {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+select,
+select option{
+    color: #1f1f1f;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #ced4da;
 }
 
 /* Spinner and Overlay from Boutique Ado Mini Project */
