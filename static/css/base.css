@@ -130,6 +130,10 @@ a.text-gold:active {
     color: #e8eded;
 }
 
+.bg-gold {
+    background-color: #ffd700;
+}
+
 /* Buttons */
 
 .btn-gold {

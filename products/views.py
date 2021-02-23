@@ -105,6 +105,7 @@ def add_products(request):
 
     return render(request, template, context)
 
+
 @login_required
 def update_products(request, product_id):
     # Allow admin to edit products
@@ -133,6 +134,7 @@ def update_products(request, product_id):
     }
 
     return render(request, template, context)
+
 
 @login_required
 def delete_products(request, product_id):
