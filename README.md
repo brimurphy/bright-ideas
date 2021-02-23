@@ -219,6 +219,29 @@ All product images are from [Lights.ie](https://www.lights.ie), I have used imag
 
 The [No Image Available](https://www.istockphoto.com/illustrations/no-image-available).
 
+The images I have used for the trades people can be found:
+  1. [Ruari O'Neill ](https://www.onegov.nsw.gov.au/new/categories/contractors-tradespeople)
+
+  2. [Amrit Craft](https://esv.vic.gov.au/news/power-and-passion/)
+
+  3. [Yasmin Zimmerman](https://www.chesapeake.edu/pathways/skilled-trades)
+
+  4. [Hector Byrne](https://developer-update.co.uk/2019/12/18/ranked-brits-crown-their-friendliest-tradespeople-myjobquote/)
+
+  5. The image if a trades person hasn't provided an image is from [Icon Library](https://icon-library.com/icon/no-profile-picture-icon-15.html)
+
+  - All names generated with [Name Generator](https://www.name-generator.org.uk/quick/)
+
+The description information for the trades people where sourced from:
+
+  1. Ruari O'Neill's content is by myself.
+
+  2. Amrit Craft is taken from [Karl Conway](https://www.linkedin.com/in/karl-conway-9b445255/) Linkdin page.
+
+  3. Yasmin Zimmerman is taken from [Chris O'Connell](https://www.linkedin.com/in/chris-o%E2%80%99connell-ab206219b/) Linkdin page.
+
+  4. Hector Byrne is taken from my Linkdin you can check my full page out [Here](https://www.linkedin.com/in/brian-leo-murphy/)
+
 
 
 
