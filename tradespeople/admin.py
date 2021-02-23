@@ -1,3 +1,16 @@
 from django.contrib import admin
+from .models import TradesPeople
 
-# Register your models here.
+
+class TradespeopleAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'location',
+        'email',
+        'rating',
+    )
+
+    ordering = ('name',)
+
+
+admin.site.register(TradesPeople, TradespeopleAdmin)

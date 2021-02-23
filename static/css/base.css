@@ -32,6 +32,7 @@ body {
     flex-direction:column; 
 }
 
+/* containers */
 .nav-container {
     background-color: #fffafa;
     z-index: 1200;
@@ -52,16 +53,16 @@ body {
     background-color: #e7e7e7;
 }
 
+.header-font {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
 .block-divder {
     width: 60%;
     color: #1f1f1f;
     margin-left: 20%;
     box-shadow: 2px 2px #ffd700;
-}
-
-.header-font {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 500;
 }
 
 .text-carousel {
@@ -76,6 +77,11 @@ body {
 
 .about-img {
     max-width: 100%;
+}
+
+.trade-border {
+    border: 1px solid #1f1f1f;
+    box-shadow: 2px 2px #ffd700;;
 }
 
 /* Styles from Bulma icon-text class https://bulma.io/documentation/elements/icon/ */
@@ -128,6 +134,16 @@ div.toast-container {
 a.text-gold:hover,
 a.text-gold:active {
     color: #e8eded;
+}
+
+.text-glow {
+    text-shadow: 2px 1px #ffd700;
+}
+
+.text-blockquote,
+.text-promise {
+    font-size: 1rem;
+    font-weight: 300;
 }
 
 .bg-gold {
@@ -212,16 +228,6 @@ h4 a.btn-gold {
     -moz-transition: all 0.5s ease-in;
     -o-transition: all 0.5s ease-in;
     -ms-transition: all 0.5s ease-in;
-}
-
-.text-glow {
-    text-shadow: 2px 1px #ffd700;
-}
-
-.text-blockquote,
-.text-promise {
-    font-size: 1rem;
-    font-weight: 300;
 }
 
 .reviews-image {

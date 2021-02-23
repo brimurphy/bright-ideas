@@ -22,5 +22,100 @@
                 <hr class="block-divder">
             </div>
         </div>
+
+        <!-- Recommended tradespeople -->
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    {% for item in trades_people %}
+                        <div class="col-12 trade-border my-4 rounded-2">
+                            <div class="row">
+                                <div class="col-12 text-center my-2 py-2">
+                                    <h3 class="header-font text-black text-glow">{{ item.name }}</h3>
+                                    <hr class="block-divder">
+                                </div>
+                            </div>
+                            <div class="row">
+                                {% if item.image_url %}
+                                    <div class="col-12 col-md-4 m-auto p-3">
+                                        <img src="{{ item.image_url }}" alt="Image of {{ item.name }}" class="card-img-top img-fluid rounded-2">
+                                    </div>
+                                {% else %}
+                                    <div class="col-12 col-md-4">
+                                        <img src="{{ MEDIA_URL }}tradespeople/no-profile-img.png" alt="Image of {{ item.name }}">
+                                    </div>
+                                {% endif %}
+                                <div class="col-12 col-md-4 text-black">
+                                    <h4 class="header-font text-center text-glow">Details</h4>
+                                    <p>
+                                        <span class="icon">
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                        </span>
+                                        <span>
+                                            Location: {{ item.location }}
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span class="icon">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </span>
+                                        <span>
+                                            Email: {{ item.email }}
+                                        </span>
+                                    </p>
+                                    {% if item.phone_number %}
+                                        <p>
+                                            <span class="icon">
+                                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                            </span>
+                                            <span>
+                                                {{ item.phone_number }}
+                                            </span>
+                                        </p>
+                                    {% endif %}
+                                    {% if item.rating %}
+                                        <p>
+                                            <span class="icon">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                            </span>
+                                            <span>
+                                                {{ item.rating }} / 5
+                                            </span>
+                                        </p>
+                                    {% endif %}
+                                </div>
+                                <div class="col-12 col-md-4 overflow-auto text-black">
+                                    <h4 class="header-font text-center text-glow">About</h4>
+                                    {{ item.description }}
+                                </div>
+                            </div>
+
+                            <!-- Button to go to booking form -->
+                            <div class="row">
+                                <div class="col-12 col-md-6 offset-md-3 text-center my-2">
+                                    <a href="#" class="btn btn-block btn-lg btn-gold">Book</a>
+                                </div>
+                            </div>
+                        </div> 
+                    {% endfor %}
+                </div>
+                
+            </div>
+        </div>
     </section>
+
+    <div class="btt-btn">
+        <button id="btt" class="btn mx-auto my-auto">
+            <span class="icon text-black">
+                <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+            </span>
+        </button>
+    </div>
 {% endblock %}
+
+{% block postload_js %}
+    {{ block.super }}
+    <script src="{% static 'products/js/btt-button.js' %}"></script>
+{% endblock %}
+
+
