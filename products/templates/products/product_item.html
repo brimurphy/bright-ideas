@@ -96,6 +96,16 @@
                     </div>
                 </div>
 
+                {% if request.user.is_superuser %}
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="{% url 'update_products' product.id %}" class="btn btn-blue btn-sm">Update</a>
+                            <a href="{% url 'delete_products' product.id %}" class="btn btn-red btn-sm ms-4">Delete</a>
+                        </div>
+                    </div>
+                    
+                {% endif %}
+
                 <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">

@@ -8,6 +8,7 @@ red: #d01114;
 grey: #e8eded;
 */
 
+/* clear browser defaults */
 *,
 *::before,
 *::after {
@@ -25,13 +26,10 @@ body {
     font-weight: 400;
     font-size: 18px;
     background-color: #fffafa;
+    /* keep footer always at bottom */
     height:100vh;
     display:flex; 
-  flex-direction:column; 
-}
-
-footer{
-  margin-top:auto; 
+    flex-direction:column; 
 }
 
 .nav-container {
@@ -44,9 +42,10 @@ footer{
 }
 
 .footer-container {
-    
     background-color: #1f1f1f;
     color: #ffd700;
+    /* Keep footer on bottom of page */
+    margin-top:auto;
 }
 
 .promise-container {
@@ -131,6 +130,8 @@ a.text-gold:active {
     color: #e8eded;
 }
 
+/* Buttons */
+
 .btn-gold {
     background-color: #ffd700;
 }
@@ -151,6 +152,32 @@ a.text-gold:active {
 .btn-black:hover,
 .btn-black:active {
     background-color: #ffd700;
+    border: 1px solid #1f1f1f;
+    color: #1f1f1f;
+    box-shadow: 1px 2px #1f1f1f;
+}
+
+.btn-blue {
+    background-color: #176087;
+    color: #ffd700;
+}
+
+.btn-blue:hover,
+.btn-blue:active {
+    background-color: #ffd700;
+    border: 1px solid #1f1f1f;
+    color: #1f1f1f;
+    box-shadow: 1px 2px #1f1f1f;
+}
+
+.btn-red {
+    background-color: #d01114;
+    color: #ffd700;
+}
+
+.btn-red:hover,
+.btn-red:active {
+    background-color: #ff0004;
     border: 1px solid #1f1f1f;
     color: #1f1f1f;
     box-shadow: 1px 2px #1f1f1f;
