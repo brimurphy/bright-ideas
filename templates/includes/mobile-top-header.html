@@ -40,7 +40,7 @@
                 <li><a class="dropdown-item" href="{% url 'add_products' %}">Project Management</a></li>
             {% endif %}
             <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
-            <li><a class="dropdown-item" href="#">Tradespeople</a></li>
+            <li><a class="dropdown-item" href="{% url 'tradespeople' %}">Tradespeople</a></li>
             <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
         {% else %}
             <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
