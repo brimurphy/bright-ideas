@@ -31,7 +31,7 @@
                 </p>
             </div>
         </div>
-
+        
         <!-- Sort products -->
         <div class="row">
             <div class="col-2 offset-10 mb-2">
@@ -84,7 +84,6 @@
         <button id="btt" class="btn mx-auto my-auto">
             <span class="icon text-black">
                 <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
-
             </span>
         </button>
     </div>
@@ -93,20 +92,8 @@
 
 {% block postload_js %}
     {{ block.super }}
+    <script src="{% static 'products/js/btt-button.js' %}"></script>
     <script type="text/javascript">
-    
-        $(window).scroll(function() {
-            let backUpButton = $(this).scrollTop();
-            if (backUpButton > 500) {
-                $(".btt-btn").fadeIn();
-            } else {
-                $(".btt-btn").fadeOut();
-            }
-        })
-
-        $("#btt").click(function() {
-            window.scrollTo(0,0)
-        })
 
         $('#sort-box').change(function() {
             let selector = $(this);
