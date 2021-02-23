@@ -268,6 +268,38 @@ h4 a.btn-gold {
     color: #ced4da;
 }
 
+/* Product Form */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.form-check-input {
+    border-color: #1f1f1f;
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+    border-color: #1f1f1f;
+}
+
+.form-check-input:checked {
+    box-shadow: none;
+    color: #1f1f1f;
+    background-color: #d01114;
+    border-color: #1f1f1f;
+}
+
 @media (min-width: 992px) {
     .header-container {
         padding-top: 130px;
