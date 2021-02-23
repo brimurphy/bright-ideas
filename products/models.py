@@ -28,7 +28,8 @@ class Product(models.Model):
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(
+        upload_to='products/', null=True, blank=True)
     ip_rating = models.CharField(max_length=4, null=True, blank=True)
     bulb_type = models.CharField(max_length=20, null=True, blank=True)
     is_dimmable = models.BooleanField(default=False)

@@ -16,18 +16,18 @@
             <div class="col-12 col-md-6 text-center text-uppercase py-1 mt-4">
                 <hr class="block-divder">
                 <h2 class="header-font text-black">Product Management</h2>
-                <h5 class="text-muted">Add a Product</h5>
+                <h5 class="text-muted">Update Product</h5>
                 <hr class="block-divder">
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'add_products' %}" class="form mb-2" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'update_products' product.id %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="text-end">
                     <a href="{% url 'products' %}" class="btn btn-black">Cancel</a>
-                    <button class="btn btn-gold" type="submit">Add Product</button>
+                    <button class="btn btn-gold" type="submit">Update Product</button>
                 </div>
                 </form>
             </div>

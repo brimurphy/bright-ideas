@@ -98,3 +98,29 @@ def add_products(request):
     }
 
     return render(request, template, context)
+
+
+def update_products(request, product_id):
+    # Allow admin to edit products
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Product successfully Updated!')
+            return redirect(reverse('product_item', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to update product!')
+    else:
+        form = ProductForm(instance=product)
+        messages.info(request, f'Currently editing {product.name}')
+
+    template = 'products/update_products.html'
+    context = {
+        'product': product,
+        'form': form,
+    }
+
+    return render(request, template, context)
