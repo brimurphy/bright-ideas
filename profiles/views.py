@@ -1,11 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile
 from .forms import UserForm
 from checkout.models import Order
 
 
+@login_required
 def profile(request):
     # View for users profile
     profile = get_object_or_404(UserProfile, user=request.user)

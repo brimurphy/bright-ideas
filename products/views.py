@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
@@ -79,8 +80,13 @@ def product_item(request, product_id):
     return render(request, template, context)
 
 
+@login_required
 def add_products(request):
     # Allow admin to add products
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry you do not have admin rights')
+        return redirect(reverse('products'))
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -99,9 +105,12 @@ def add_products(request):
 
     return render(request, template, context)
 
-
+@login_required
 def update_products(request, product_id):
     # Allow admin to edit products
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry you do not have admin rights')
+        return redirect(reverse('products'))
 
     product = get_object_or_404(Product, pk=product_id)
 
@@ -125,9 +134,13 @@ def update_products(request, product_id):
 
     return render(request, template, context)
 
-
+@login_required
 def delete_products(request, product_id):
     # Allow admin to delete products
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry you do not have admin rights')
+        return redirect(reverse('products'))
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product has been deleted from the database!')
