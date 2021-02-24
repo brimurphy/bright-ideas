@@ -13,6 +13,7 @@ wh_secret = settings.STRIPE_WH_SECRET
 
 
 # Using Django
+@require_POST
 @csrf_exempt
 def webhooks(request):
     payload = request.body
@@ -25,11 +26,12 @@ def webhooks(request):
         )
     except ValueError as e:
         # Invalid payload
-        return HttpResponse(content=e, status=400)
+        return HttpResponse(status=400)
+    except stripe.error.SignatureVerificationError as e:
+        # Invalid signature
+        return HttpResponse(status=400)
     except Exception as e:
         return HttpResponse(content=e, status=400)
-
-    return HttpResponse(status=200)
 
     #  Set up a webhook handler
     handler = StripeWH_Handler(request)
@@ -49,18 +51,3 @@ def webhooks(request):
     # Call event handler with the event
     response = event_handler(event)
     return response
-
-    # Handle the event
-    if event.type == 'payment_intent.succeeded':
-        # contains a stripe.PaymentIntent
-        payment_intent = event.data.object
-        print('PaymentIntent was successful!')
-    elif event.type == 'payment_method.attached':
-        # contains a stripe.PaymentMethod
-        payment_method = event.data.object 
-        print('PaymentMethod was attached to a Customer!')
-    # ... handle other event types
-    else:
-        print('Unhandled event type {}'.format(event.type))
-
-    return HttpResponse(status=200)
