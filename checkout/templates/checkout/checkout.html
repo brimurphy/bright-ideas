@@ -41,9 +41,13 @@
                {% for item in cart_items %}
                 <div class="row">
                     <div class="col-2">
-                        {% if item.product.image %}
+                        {% if item.product.image_url %}
                             <a href="{% url 'product_item' item.product.id %}" target="_blank">
                                 <img src="{{ item.product.image_url }}" alt="{{ product.name }}" class="w-100">
+                            </a>
+                        {% elif product.image %}
+                            <a href="{% url 'product_item' item.product.id %}" target="_blank"></a>
+                                <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
                             </a>
                         {% else %}
                             <a href="{% url 'product_item' item.product.id %}" target="_blank">
