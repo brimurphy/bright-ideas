@@ -3,12 +3,14 @@
     overflow-y: auto;
 }
 
-#profile-update-form p {
+#custom-form-style p {
     margin-top: 1.5rem;
     color: #1f1f1f;
 }
 
-#profile-update-form input {
+#custom-form-style input,
+#custom-form-style select,
+#custom-form-style textarea {
     border-radius: .25rem;
     border: 1px solid #1f1f1f;
     color: #1f1f1f;
@@ -16,12 +18,16 @@
     margin-bottom: .5rem;
 }
 
-#profile-update-form input:focus {
+#custom-form-style input:focus,
+#custom-form-style select:focus,
+#custom-form-style textarea:focus {
     border: 1px solid #1f1f1f;
     box-shadow: 1px 2px 4px #ffd700;
 }
 
-#profile-update-form input::placeholder {
+#custom-form-style input::placeholder,
+#custom-form-style select::placeholder,
+#custom-form-style textarea::placeholder {
     color: #ced4da;
 }
 

@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -22,7 +26,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6 offset-md-3">
-                <form method="POST" action="{% url 'update_products' product.id %}" class="form mb-2" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'update_products' product.id %}" class="form mb-2" id="custom-form-style" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
                     {% if field.name != 'image' %}
