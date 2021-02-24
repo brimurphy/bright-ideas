@@ -49,7 +49,7 @@
                                     <h4 class="header-font text-center text-glow">Details</h4>
                                     <p>
                                         <span class="icon">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            <i class="fa fa-map-marker text-glow" aria-hidden="true"></i>
                                         </span>
                                         <span>
                                             Location: {{ item.location }}
@@ -57,7 +57,7 @@
                                     </p>
                                     <p>
                                         <span class="icon">
-                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                            <i class="fa fa-envelope text-glow" aria-hidden="true"></i>
                                         </span>
                                         <span>
                                             Email: {{ item.email }}
@@ -65,7 +65,7 @@
                                     </p>
                                     {% if item.phone_number %}
                                         <p>
-                                            <span class="icon">
+                                            <span class="icon text-glow">
                                                 <i class="fa fa-phone" aria-hidden="true"></i>
                                             </span>
                                             <span>
@@ -75,7 +75,7 @@
                                     {% endif %}
                                     {% if item.rating %}
                                         <p>
-                                            <span class="icon">
+                                            <span class="icon text-glow">
                                                 <i class="fa fa-star" aria-hidden="true"></i>
                                             </span>
                                             <span>
@@ -93,7 +93,7 @@
                             <!-- Button to go to booking form -->
                             <div class="row">
                                 <div class="col-12 col-md-6 offset-md-3 text-center my-2">
-                                    <a href="#" class="btn btn-block btn-lg btn-gold">Book</a>
+                                    <a href="{% url 'booking_form' item.id %}" class="btn btn-block btn-lg btn-gold">Book</a>
                                 </div>
                             </div>
                         </div> 

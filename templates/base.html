@@ -59,7 +59,9 @@
                         <input type="text" placeholder="Search.." name="q" class="form-control border border-1 rounded-pill">
                         <div class="m-0">
                             <button type="submit" class="form-control btn">
-                                <span class="icon"><i class="fas fa-search"></i></span> 
+                                <span class="icon text-glow">
+                                    <i class="fas fa-search"></i>
+                                </span> 
                             </button>
                         </div>
                     </div>
@@ -73,10 +75,10 @@
                     <li class="list-inline-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="user-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="text-center">
-                                <div class="text-center icon text-black">
+                                <span class="icon text-black text-glow">
                                     <i class="fas fa-user-alt fa-lg"></i>
-                                </div>
-                                <p class="my-0 text-black">My Profile</p>
+                                </span>
+                                <p class="my-0 text-black text-glow">My Profile</p>
                             </div>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-center" aria-labelledby="user-dropdown">
@@ -99,8 +101,10 @@
                     <li class="list-inline-item">
                         <a href="{% url 'view_cart' %}" class="nav-link">
                             <div class="text-center">
-                                <div class="icon text-black"><i class="fas fa-shopping-cart fa-lg"></i></div>
-                                <p class="my-0 text-black">
+                                <span class="icon text-black text-glow">
+                                    <i class="fas fa-shopping-cart fa-lg"></i>
+                                </span>
+                                <p class="my-0 text-black text-glow">
                                     {% if grand_total %}
                                         €{{ grand_total|floatformat:2 }}
                                     {% else %}
@@ -157,35 +161,35 @@
     </main>
 
     <!-- footer -->
-    <footer class="container-fluid text-center pb-2 footer-container">
+    <footer class="container-fluid text-center py-2 footer-container">
         <div class="row">
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4 my-2">
                 <div class="row">
+                    <div class="col-12">
                     <a 
                     href="https://www.google.com/maps/place/National+Lighting/@53.3257169,-6.3608587,15z/data=!4m5!3m4!1s0x0:0xec50d0722853e6f6!8m2!3d53.3257169!4d-6.3608587"
                     class="text-decoration-none text-gold ease-in"
                     target="_blank">
-                        <div class="col-12">
                             <div class="icon text-gold">
                                 <i class="fas fa-map-marker-alt fa-lg"></i>
                             </div> 
-                        </div>
-                        <div class="col-12">
-                            Knockmitten Ln,
-                        </div>
-                        <div class="col-12">
-                            Fox-And-Geese Common,
-                        </div>
-                        <div class="col-12">
-                            Dublin 12,
-                        </div>
-                        <div class="col-12">
-                            D12 E7VP
-                        </div>
-                    </a>
+                            <div class="col-12">
+                                Knockmitten Ln,
+                            </div>
+                            <div class="col-12">
+                                Fox-And-Geese Common,
+                            </div>
+                            <div class="col-12">
+                                Dublin 12,
+                            </div>
+                            <div class="col-12">
+                                D12 E7VP
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4 mt-4">
                 <div class="row">
                     <div class="col-12">
                         <p><strong>Follow Us:</strong></p>
@@ -218,7 +222,7 @@
                 </div>
                 
             </div>
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4 mt-4">
                 <div class="row">
                     <div class="col-12">
                         <div class="text-uppercase">Store Opening Hours</div>

@@ -13,7 +13,7 @@
 
     <section class="container">
         <div class="row">
-            <div class="col-12 col-md-6 text-center text-uppercase py-1 mt-4">
+            <div class="col-12 col-md-6 offset-md-3 text-center text-uppercase py-1 mt-4">
                 <hr class="block-divder">
                 <h2 class="header-font text-black">Product Management</h2>
                 <h5 class="text-muted">Update Product</h5>
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 offset-md-3">
                 <form method="POST" action="{% url 'update_products' product.id %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
