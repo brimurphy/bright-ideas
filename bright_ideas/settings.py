@@ -42,12 +42,15 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # local apps
     'home',
     'products',
     'cart',
     'checkout',
     'profiles',
     'tradespeople',
+
+    # third party
     'crispy_forms',
 ]
 
