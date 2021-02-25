@@ -15,6 +15,16 @@
 
     <section class="container-fluid">
         <div class="row">
+                <div class="col-12 d-block d-md-none">
+                    <p class="text-uppercase text-center header-font text-gold bg-black w-100">
+                        Bring your Ideas to Light
+                        <h4 class="text-center">
+                            <a href="{% url 'products' %}" class="ease-in shop-now-btn btn btn-gold rounded-3 text-uppercase">Shop Now</a>
+                        </h4>
+                    </p>
+                </div>
+            </div>
+        <div class="row">
             <div class="col-12">
                 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner carousel-container">
@@ -69,10 +79,10 @@
                     </div>
                  </div>
             </div>
-            <div class="my-auto text-carousel rounded-3">
-                <h1 class="display-6 text-uppercase header-font">
+            <div class="my-auto text-carousel rounded-3 d-none d-md-block">
+                <h2 class="text-uppercase header-font">
                     Bring your Ideas to <span class="text-gold">Light</span>
-                </h1>
+                </h2>
                 <h4 class="text-center">
                     <a href="{% url 'products' %}" class="ease-in shop-now-btn btn btn-lg btn-gold rounded-3 text-uppercase">Shop Now</a>
                 </h4>
@@ -89,10 +99,10 @@
                 <hr class="block-divder">
             </div>
             <div class="row mt-4">
-                <div class="d-none d-md-block col-md-5">
+                <div class="d-none d-lg-block col-md-5">
                     <img src="{{ MEDIA_URL }}about-image.jpg" class="about-img rounded-3" alt="Many bulbs hanging from a ceiling">
                 </div>
-                <div class="col-12 col-md-7 text-center text-black">
+                <div class="col-12 col-lg-7 text-center text-black">
                     <p><strong class="text-glow">Bright Ideas</strong> are in business since 2001, located just off the Naas Road. 
                        We are a family run business. Our sales team work together with the Architects,
                        Designers, Electrical Contractors and Landscape Gardeners to tailor a lighting
@@ -115,7 +125,7 @@
                 <hr class="block-divder">
             </div>
             <div class="row">
-                <div class="col-6 col-md-4 text-center mb-3">
+                <div class="col-12 col-sm-6 col-md-4 text-center mb-3">
                     <blockquote class="blockqoute text-blockquote text-black">
                         <p>This is a little gem just off the Naas Road. It’s packed with lights lamps and shades.
                         Great design and a great range much larger shops would envy. A great friendly staff to help you choose.
@@ -130,7 +140,7 @@
                         </cite>
                     </blockquote>
                 </div>
-                <div class="col-6 col-md-4 text-center text-blockquote mb-3">
+                <div class="col-12 col-sm-6 col-md-4 text-center mb-3">
                     <blockquote class="blockqoute text-blockquote text-black">
                         <p>Thank you to Lisa and all at Bright Ideas! So grateful for the advise choosing my new over
                         counter lights for my new kitchen. I Love them!

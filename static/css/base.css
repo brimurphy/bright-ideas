@@ -116,6 +116,7 @@ body {
 }
 
 /* Remove bootstrap default styles */
+
 ul.text-lg-end {
     margin-bottom: 0;
 }
@@ -170,6 +171,10 @@ a.text-gold:active {
 
 .bg-gold {
     background-color: #ffd700;
+}
+
+.bg-black {
+    background-color: #1f1f1f;
 }
 
 /* Buttons */
@@ -335,11 +340,21 @@ h4 a.btn-gold {
     .carousel-container img {
         height: 640px;
     }
+
+    .text-carousel {
+    top: 55%;
+    left: 55%;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
     .carousel-container img {
     height: 490px;
+    }
+
+    .text-carousel {
+    top: 50%;
+    left: 50%;
     }
 }
 
@@ -351,6 +366,11 @@ h4 a.btn-gold {
     .carousel-container img {
         height: 430px;
     }
+
+    .text-carousel {
+    top: 40%;
+    left: 40%;
+    }
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
@@ -358,6 +378,17 @@ h4 a.btn-gold {
         padding-top: 100px;
     }
 
+    .carousel-container img {
+        height: 430px;
+    }
+
+    .text-carousel {
+    top: 40%;
+    left: 20%;
+    }
+}
+
+@media screen and (max-width: 575px) {
     .carousel-container img {
         height: 430px;
     }
