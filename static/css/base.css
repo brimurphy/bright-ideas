@@ -38,6 +38,10 @@ body {
     z-index: 1200;
 }
 
+.mobile-nav-icon {
+    font-size: 0.8rem;
+}
+
 .header-container {
         padding-top: 145px;
     }
@@ -231,6 +235,7 @@ a.text-gold:active {
 }
 
 /* Back to top button */
+
 .btt-btn {
     display: none;
     position: fixed;
@@ -275,6 +280,7 @@ h4 a.btn-gold {
 }
 
 /* Allauth */
+
 .allauth-form-inner-content p {
     margin-top: 1.5rem;
     color: #1f1f1f;
@@ -302,6 +308,7 @@ h4 a.btn-gold {
 }
 
 /* Product Form */
+
 .btn-file {
     position: relative;
     overflow: hidden;
@@ -389,6 +396,18 @@ h4 a.btn-gold {
 }
 
 @media screen and (max-width: 575px) {
+    .mobile-nav-icon {
+        font-size: 0.8rem;
+    }
+
+    .main-logo-mobile {
+        padding-left: 0.1rem;
+    }
+
+    a.nav-link {
+        padding: 0.1rem;
+    }
+
     .carousel-container img {
         height: 430px;
     }
