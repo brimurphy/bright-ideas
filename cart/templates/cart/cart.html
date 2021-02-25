@@ -20,6 +20,9 @@
                 <hr class="block-divder">
             </div>
         </div>
+
+        <!-- Cart -->
+
         <div class="row">
             <div class="col-12">
                 {% if cart_items %}
@@ -91,11 +94,21 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <a class="update-qty text-decoration-none"><small>Update</small></a>
-                                        <a class="delete-item text-decoration-none float-end" id="delete_{{ item.item_id }}"><small>Remove</small></a>
+                                        <a class="update-qty text-decoration-none btn-sm btn-black "><small>Update</small></a>
+                                        
                                     </td>
                                     <td class="p2">
                                         <p class="my-0 text-black">€{{ item.product.price | subtotal:item.quantity }}</p>
+                                    </td>
+                                    <td>
+                                        <!-- Remove from bag -->
+                                        <a class="delete-item text-decoration-none float-end" id="delete_{{ item.item_id }}">
+                                            <small class="text-red">
+                                                <span>
+                                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                                </span>
+                                            </small>
+                                        </a>
                                     </td>
                                 </tr>
                             {% endfor %}
