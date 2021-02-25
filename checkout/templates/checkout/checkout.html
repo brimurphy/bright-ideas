@@ -46,7 +46,7 @@
                                 <img src="{{ item.product.image_url }}" alt="{{ product.name }}" class="w-100">
                             </a>
                         {% elif product.image %}
-                            <a href="{% url 'product_item' item.product.id %}" target="_blank"></a>
+                            <a href="{% url 'product_item' item.product.id %}" target="_blank">
                                 <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
                             </a>
                         {% else %}
@@ -56,7 +56,12 @@
                         {% endif %}
                     </div>
                     <div class="col-7">
-                        <p class="text-black"><strong>{{ item.product.name }}</strong></p>
+                        <p class="text-black mb-1"><strong>{{ item.product.name }}</strong></p>
+                        {% if item.product.is_clearance %}
+                            <span class="small">
+                                <span class="text-uppercase fw-bold text-red">Sale!</span>
+                            </span>
+                        {% endif %}
                         <p class="text-black small">Qty: {{ item.quantity }}</p>
                     </div>
                     <div class="col-3">
@@ -111,7 +116,7 @@
 
                     <!-- CTA buttons -->
                     <div class="row">
-                        <div class="d-grid gap-2 col-12 col-md-6 offset-lg-3 my-2">
+                        <div class="d-grid gap-2 col-12 col-md-6 my-2">
                             <a href="{% url 'view_cart' %}" class="btn btn-black">
                                 <span class="icon">
                                     <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -119,9 +124,7 @@
                                 <span class="text-uppercase">Update Cart</span>
                             </a>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="d-grid gap-2 col-12 col-md-6 offset-lg-3 my-2">
+                        <div class="d-grid gap-2 col-12 col-md-6 my-2">
                             <button type="submit" class="btn btn-gold text-uppercase" id="submit-btn">
                                 <span class="text-uppercase">Complete Order</span>
                                 <span class="icon">

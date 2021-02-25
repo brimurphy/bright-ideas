@@ -25,6 +25,11 @@
                     <div class="col-9">
                         <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                         <p class="my-0 small">Qty: {{ item.quantity }}</p>
+                        {% if product.is_clearance %}
+                            <span class="small">
+                                <span class="text-uppercase fw-bold text-red">Sale!</span>
+                            </span>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

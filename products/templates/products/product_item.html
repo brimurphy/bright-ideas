@@ -39,6 +39,11 @@
             </div>
             <div class="col-12 col-lg-6">
                 <div class="col">
+                    {% if product.is_clearance %}
+                        <span class="small">
+                            <span class="text-uppercase fw-bold text-red">Sale!</span>
+                        </span>
+                    {% endif %}
                     <p>€{{ product.price }}</p>
                     {% if product.rating %}
                         <small class="text-muted">{{ product.rating }} / 5</small>
