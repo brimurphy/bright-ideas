@@ -48,8 +48,13 @@
         </div>
         <div class="row">
             {% for product in products %}
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4 my-4">
                     <div class="card h-100 border-1">
+                        {% if product.is_clearance %}
+                            <span class="clearance small d-flex justify-content-center">
+                                <span class="text-uppercase text-gold">Sale!</span>
+                            </span>
+                        {% endif %}
                         {% if product.image_url %}
                             <a href="{% url 'product_item' product.id %}">
                                 <img src="{{ product.image_url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
@@ -64,12 +69,10 @@
                             </a>
                         {% endif %}
                         <div class="card-body">
-                            <p>{{ product.name }}</p>
-                        </div>
-                        <div class="card-footer">
+                            <h5 class="header-font text-black text-glow">{{ product.name }}</h5>
                             <div class="row">
-                                <div class="col">
-                                    <p>€{{ product.price }}</p>
+                                <div class="col-12">
+                                    <p class="text-black my-2">€{{ product.price }}</p>
                                     {% if product.rating %}
                                         <small class="text-muted">{{ product.rating }} / 5</small>
                                     {% else %}

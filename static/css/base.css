@@ -53,6 +53,8 @@ body {
     background-color: #e7e7e7;
 }
 
+/* Misc */
+
 .header-font {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
@@ -77,6 +79,21 @@ body {
 
 .about-img {
     max-width: 100%;
+}
+
+.clearance {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #d01114;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.clearance > span {
+    padding-top: 28%;
+    transform: rotate(45deg);
 }
 
 .trade-border {
@@ -121,6 +138,7 @@ div.toast-container {
 
 .text-gold {
     color: #ffd700;
+    font-weight: 500;
 }
 
 .text-black {
