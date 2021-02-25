@@ -1,7 +1,6 @@
 <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-bs-autohide="false">
-    <div class="toast-header">
-        <img src="#" class="rounded me-2" alt="#">
-        <strong class="me-auto">Bootstrap</strong>
+    <div class="toast-header bg-gold text-black">
+        <strong class="me-auto">Success!!</strong>
         <small></small>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
@@ -10,7 +9,7 @@
     </div>
     {% if grand_total and not on_profile_page %}
         <p class="header-font text-black">Your Bag ({{ product_count }})</p>
-        <div class="toast-cart">
+        <div class="toast-cart text-black">
             {% for item in cart_items %}
                 <div class="row">
                     <div class="col-3 my-2">
