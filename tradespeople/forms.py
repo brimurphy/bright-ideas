@@ -6,17 +6,15 @@ class BookingForm(forms.ModelForm):
 
     class Meta:
         model = UserProfile
-        fields = ('full_name', 'cust_email', 'default_phone_number',
-                  'date', 'default_street_address1', 'default_street_address2',
-                  'default_town_or_city', 'default_county',)
+        fields = ('default_full_name', 'default_email', 'default_phone_number',
+                  'default_street_address1', 'default_street_address2',
+                  'default_town_or_city', 'default_county', 'date', 'comments',)
 
-    full_name = forms.CharField(max_length=254,)
-    cust_email = forms.EmailField()
     comments = forms.CharField(widget=forms.Textarea(attrs={
         'placeholder': 'Additional Comments...',
     }),)
     date = forms.DateTimeField(
-        input_formats=['%d/%m/%Y %H:%M'],
+        input_formats=['%DD/%MM/%YYYY %HH:%mm'],
         widget=forms.DateTimeInput(attrs={
             'type': 'datetime-local',
             'class': 'form-control date-time-picker-input',
@@ -31,24 +29,27 @@ class BookingForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'full_name': 'Name',
-            'cust_email': 'Email',
-            'date': 'Choose available date',
+            'default_full_name': 'Name',
+            'default_email': 'Email',
             'default_phone_number': 'Phone No.',
             'default_street_address1': 'Street Address',
             'default_street_address2': 'Street Address',
             'default_town_or_city': 'Town or City',
             'default_county':  'County',
+            'date': 'Choose available date',
             'comments': 'Additional Comments...',
         }
 
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['default_full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
+            placeholder = placeholders[field]
+            self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = (
                 'my-2')
-            self.fields[field].label = False
+            self.fields['comments'].required = False
+            self.fields['default_street_address2'].required = False
+            if field != 'date':
+                self.fields[field].label = False
+            else:
+                self.fields[field].label = (
+                    'Choose your preferred time and date')
