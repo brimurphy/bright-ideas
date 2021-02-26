@@ -16,6 +16,10 @@ wh_secret = settings.STRIPE_WH_SECRET
 @require_POST
 @csrf_exempt
 def webhooks(request):
+    # Setup
+    wh_secret = settings.STRIPE_WH_SECRET
+    stripe_api_key = settings.STRIPE_SECRET_KEY
+
     payload = request.body
     event = None
 
