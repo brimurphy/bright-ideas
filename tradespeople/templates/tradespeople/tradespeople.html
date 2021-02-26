@@ -39,6 +39,10 @@
                                     <div class="col-12 col-md-4 m-auto p-3">
                                         <img src="{{ person.image_url }}" alt="Image of {{ person.name }}" class="card-img-top img-fluid rounded-2">
                                     </div>
+                                {% elif person.image %}
+                                    <div class="col-12 col-md-4 m-auto p-3">
+                                        <img src="{{ person.image }}" alt="Image of {{ person.name }}" class="card-img-top img-fluid rounded-2">
+                                    </div>
                                 {% else %}
                                     <div class="col-12 col-md-4">
                                         <img src="{{ MEDIA_URL }}tradespeople/no-profile-img.png" alt="Image of {{ person.name }}">

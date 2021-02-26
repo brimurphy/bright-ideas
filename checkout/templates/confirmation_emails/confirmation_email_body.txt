@@ -1,4 +1,4 @@
-Hey {{ order.full_name }},
+Hey {{ order.full_name|safe }},
 
 We are getting your order ready to be shipped. We will notify you when it has been dispatched.
 

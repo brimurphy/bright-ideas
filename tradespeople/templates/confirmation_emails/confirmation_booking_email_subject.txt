@@ -1,0 +1,1 @@
+Bright Ideas confirmation for booking of {{ trades_person_name|safe }}

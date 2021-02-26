@@ -1,0 +1,7 @@
+Hey {{ user_name|safe }},
+
+This is a booking confirmation for {{ trades_person|safe }} on {{ date }} 
+
+any problems please contact us {{ contact_email }}
+
+Thank you for using Bright Ideas!
