@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}404 Page Not Found{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+    <section class="container">
+       <div class="row">
+           <div class="col text-center">
+               <h3>The Lights are off!</h3>
+                <div class="col">
+                    <img src="{{  }}" alt="" />
+                </div>
+                <p class="text-black">Sorry we couldn't find what you were looking for!</p>
+                <a href="{{ url 'products' }}" class="btn btn-lg btn-black">
+                    <span class="icon">
+                        <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+                    </span>
+                    <span>
+                        Go back to the light
+                    </span>
+                </a>
+           </div>
+       </div>
+    </section>
+
+{% endblock %}
