@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block extra_title %}404 Page Not Found{% endblock %}
+{% block extra_title %}500 Server Error{% endblock %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -19,8 +19,8 @@
                <div class="col">
                    <img src="{{ MEDIA_URL }}error-page-image.png" alt="Turned off cartoon light bulb" />
                </div>
-               <h3>The Lights are off!</h3>
-                <p class="text-black">Sorry we couldn't find what you were looking for!</p>
+               <h3>Oopps!</h3>
+                <p class="text-black">There appears to be an error with this page</p>
                 <a href="{% url 'products' %}" class="btn btn-lg btn-black">
                     <span class="icon">
                         <i class="fa fa-lightbulb-o" aria-hidden="true"></i>
