@@ -1,1 +1,1 @@
-web: gunicorn bright-ideas.wsgi:application
+web: gunicorn bright_ideas.wsgi:application
