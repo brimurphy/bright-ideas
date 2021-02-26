@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
 
 from .models import TradesPeople
 from .forms import BookingForm
@@ -20,28 +22,40 @@ def trades_people(request):
     return render(request, template, context)
 
 
+def booking_email(userInfo):
+    cust_email = userInfo.default_email
+
+    send_mail(
+        'Test Email',
+        'This is a test for booking',
+        settings.DEFAULT_FROM_EMAIL,
+        [cust_email]
+    )
+
+
 @login_required
 def booking_form(request, person_id):
     # A view to book a tradesperson
-    userInfo = get_object_or_404(UserProfile, user=request.user)
+    user_Info = get_object_or_404(UserProfile, user=request.user)
     trades_booking = get_object_or_404(TradesPeople, pk=person_id)
 
     if request.method == 'POST':
-        form = BookingForm(request.POST, instance=userInfo)
+        form = BookingForm(request.POST, instance=user_Info)
         if form.is_valid():
             form.save()
             messages.success(request, 'Booking Complete')
+            booking_email(user_Info)
             return redirect(reverse('products'))
         else:
             messages.error(request, 'Booking Failed!!')
     else:
-        form = BookingForm(instance=userInfo)
+        form = BookingForm(instance=user_Info)
 
     template = 'tradespeople/booking_form.html'
     context = {
         'trades_booking': trades_booking,
         'form': form,
-        'userInfo': userInfo,
+        'user_Info': user_Info,
     }
 
     return render(request, template, context)
