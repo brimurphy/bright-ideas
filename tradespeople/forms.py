@@ -8,7 +8,8 @@ class BookingForm(forms.ModelForm):
         model = UserProfile
         fields = ('default_full_name', 'default_email', 'default_phone_number',
                   'default_street_address1', 'default_street_address2',
-                  'default_town_or_city', 'default_county', 'date', 'comments',)
+                  'default_town_or_city', 'default_county',
+                  'date', 'comments',)
 
     comments = forms.CharField(widget=forms.Textarea(attrs={
         'placeholder': 'Additional Comments...',

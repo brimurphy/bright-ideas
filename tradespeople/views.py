@@ -23,16 +23,25 @@ def trades_people(request):
 @login_required
 def booking_form(request, person_id):
     # A view to book a tradesperson
-    userInfo = get_object_or_404(UserProfile, pk=person_id)
-    form = BookingForm(instance=userInfo)
-
+    userInfo = get_object_or_404(UserProfile, user=request.user)
     trades_booking = get_object_or_404(TradesPeople, pk=person_id)
+
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=userInfo)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Booking Complete')
+            return redirect(reverse('products'))
+        else:
+            messages.error(request, 'Booking Failed!!')
+    else:
+        form = BookingForm(instance=userInfo)
 
     template = 'tradespeople/booking_form.html'
     context = {
         'trades_booking': trades_booking,
         'form': form,
-        'userInfo': userInfo
+        'userInfo': userInfo,
     }
 
     return render(request, template, context)
