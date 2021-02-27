@@ -137,13 +137,21 @@ def update_products(request, product_id):
 
 
 @login_required
-def delete_products(request, product_id):
+def delete_product(request, product_id):
     # Allow admin to delete products
+    product = get_object_or_404(Product, pk=product_id)
     if not request.user.is_superuser:
         messages.error(request, 'Sorry you do not have admin rights')
         return redirect(reverse('products'))
+    else:
+        if request.method == 'POST':
+            product = get_object_or_404(Product, pk=product_id)
+            product.delete()
+            messages.success(request, 'Product has been deleted from the database!')
+            return redirect(reverse('products'))
 
-    product = get_object_or_404(Product, pk=product_id)
-    product.delete()
-    messages.success(request, 'Product has been deleted from the database!')
-    return redirect(reverse('products'))
+    template = 'products/delete_product.html'
+    context = {
+        'product': product,
+    }
+    return render(request, template, context)

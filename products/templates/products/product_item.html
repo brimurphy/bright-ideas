@@ -109,7 +109,7 @@
                     <div class="row">
                         <div class="col-12">
                             <a href="{% url 'update_products' product.id %}" class="btn btn-blue btn-sm">Update</a>
-                            <a href="{% url 'delete_products' product.id %}" class="btn btn-red btn-sm ms-4">Delete</a>
+                            <a id="" href="{% url 'delete_product' product.id %}" class="btn btn-red btn-sm ms-4">Delete</a>
                         </div>
                     </div>
                     
@@ -193,5 +193,10 @@
             $('#details').toggleClass('collapse');
             $('#description-info').removeClass('show');
         });
+
+        $('#delete-confirm').on('click', function(e) {
+            e.PreventDefault();
+            
+        })
     </script>
 {% endblock %}
