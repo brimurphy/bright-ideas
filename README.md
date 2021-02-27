@@ -85,7 +85,7 @@ View TESTING.md [HERE]()
 
   ### Colour Scheme
 
-  ![Colour Palette](/media/color-palette.png)
+  ![Colour Palette](/color-palette.png)
 
   The main colours of the site are **Eerie Black** (#1F1F1F) and **Snow White** (#fffafa).
   These were chosen to give the user an easy on the eye and for good readability.
@@ -136,11 +136,11 @@ View TESTING.md [HERE]()
     
   * Backend
 
-    - [Flask](https://flask.palletsprojects.com/en/1.1.x/)
-    - [PyMongo](https://pymongo.readthedocs.io/en/stable/)
-    - [Werkzueg](https://werkzeug.palletsprojects.com/en/1.0.x/)
-    - [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/)
-    - [MongoDB](https://www.mongodb.com/)
+    - []()
+    - [](/)
+    - []()
+    - []()
+    - []()
 
   * Other
 
@@ -148,7 +148,7 @@ View TESTING.md [HERE]()
     - [Heroku](https://heroku.com/)
     - [Gitpod](https://gitpod.io/)
     - [Balsamiq](https://balsamiq.com/)
-    - [RandomKeygen](https://randomkeygen.com/)
+    - [Mini Web Tool](https://miniwebtool.com/django-secret-key-generator/)
     - [Coolors](https://coolors.co/)
     - [Paint 3D](https://www.microsoft.com/en-us/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab)
     - [Table Convert](https://tableconvert.com/)
@@ -234,7 +234,7 @@ The images I have used for the trades people can be found:
 
 The description information for the trades people where sourced from:
 
-  1. Ruari O'Neill's content is by myself.
+  1. Ruari O'Neill's content is by Brian Murphy.
 
   2. Amrit Craft is taken from [Karl Conway](https://www.linkedin.com/in/karl-conway-9b445255/) Linkdin page.
 
@@ -242,8 +242,22 @@ The description information for the trades people where sourced from:
 
   4. Hector Byrne is taken from my Linkdin you can check my full page out [Here](https://www.linkedin.com/in/brian-leo-murphy/)
 
+The image I have used for the 404 and 500 pages is from [Free SVG](https://freesvg.org/cartoon-light-bulb)
+
 
 
 
 ### Acknowledgements
 
+### Code
+
+  - To get the back to top button used on this Project I used **apaul** answer to this question on [Stack Overflow](https://stackoverflow.com/questions/15798360/show-div-on-scrolldown-after-800px).
+  With some credit going to (JQuery Docs)[https://api.jquery.com/scrollTop/] and (CSS Tricks article)[https://css-tricks.com/slide-in-as-you-scroll-down-boxes/]
+
+  - To get my search filters working correctly I used read this (Wellfire article)[https://wellfire.co/learn/simple-search-manager-methods/] and  (Django Docs)[https://docs.djangoproject.com/en/3.1/topics/db/search/]
+
+  - To get the footer to always stay at the bottom of the viewport I found a solution on (Stack Overflow)[https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b] by vsync
+
+  - Help with the date picker for the Tradespeople booking form came from (Vitor Freitas)[https://simpleisbetterthancomplex.com/tutorial/2019/01/03/how-to-use-date-picker-with-django.html] and his article on (Simple is better than complex)[https://simpleisbetterthancomplex.com/]
+
+  - To get the date verification to not allow a past time or date working I found help on (Stack Overflow)[https://stackoverflow.com/questions/50002600/django-models-datefield-prevent-past] from an answer by benwad which also pointed me towards the (Django Docs)[https://docs.djangoproject.com/en/3.1/topics/i18n/timezones/]
