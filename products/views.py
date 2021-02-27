@@ -37,10 +37,14 @@ def all_products(request):
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
 
-        if 'is_clearance' in request.GET:
+        if 'all_deals' in request.GET:
+            products = products.filter(
+                Q(is_multipack=True) | Q(is_clearance=True))
+
+        if 'clearance' in request.GET:
             products = products.filter(is_clearance=True)
 
-        if 'is_multipack' in request.GET:
+        if 'multipack' in request.GET:
             products = products.filter(is_multipack=True)
 
         if 'q' in request.GET:
