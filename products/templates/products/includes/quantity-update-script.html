@@ -1,0 +1,22 @@
+<script type="text/javascript">
+    // Update qty
+    $('.update-qty').click(function(e) {
+        let form = $(this).prev('.update-form');
+        form.submit();
+        $.post(url, data).done(function() {
+            location.reload();
+        });
+    })
+
+    // Remove item from cart
+    $('.delete-item').click(function(e) {
+        let csrfToken = "{{ csrf_token }}";
+        let itemId = $(this).attr('id').split('delete_')[1];
+        let url = `/cart/delete/${itemId}/`;
+        let data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data).done(function() {
+            location.reload();
+        });
+    })
+</script>

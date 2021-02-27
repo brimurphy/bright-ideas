@@ -1,0 +1,7 @@
+<p class="my-0 text-black"><strong>{{ item.product.name }}</strong></p>
+<p class="my-0 small text-muted text-black">Item No: {{ item.product.sku }}</p>
+{% if item.product.is_clearance %}
+    <p class="small">
+        <span class="text-uppercase fw-bold text-red">Sale!</span>
+    </p>
+{% endif %}
