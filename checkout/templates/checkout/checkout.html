@@ -29,7 +29,7 @@
 
             <!-- Cart summary -->
             <div class="col-12 col-md-6 order-md-last mt-2">
-               <p class="text-black">Order Summary ({{ product_count }})</p>
+               <p class="text-black">Order Summary ({{ product.count }})</p>
                <div class="row">
                    <div class="col-7 offset-2">
                        <p class="text-black text-muted">Item</p>
@@ -93,7 +93,7 @@
                         {{ order_form.country | as_crispy_field }}
                         <div class="form-check form-check-inline">
                             {% if user.is_authenticated %}
-                                <label class="form-check-label" for="inlineCheckbox1">Save delivery details</label>
+                                <label class="form-check-label" for="save-info">Save delivery details</label>
                                 <input class="form-check-input" type="checkbox" id="save-info" name="save-info" checked>
                             {% else %}
                                 <a class="text-decoration-none" href="{% url 'account_signup' %}">Create an Account</a> or

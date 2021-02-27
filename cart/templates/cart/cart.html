@@ -154,7 +154,7 @@
 
 {% block postload_js %}
     {{ block.super }}
-    <script src="{% static 'products/js/btt-button.js' %}"></script>
     {% include 'products/includes/quantity-input-script.html' %}
+    <script src="{% static 'products/js/btt-button.js' %}"></script>
     {% include 'products/includes/quantity-update-script.html' %}
 {% endblock %}

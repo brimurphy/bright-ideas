@@ -5,8 +5,8 @@ $(window).scroll(function() {
     } else {
         $(".btt-btn").fadeOut();
     }
-})
+});
 
 $("#btt").click(function() {
-    window.scrollTo(0,0)
-})
+    window.scrollTo(0,0);
+});

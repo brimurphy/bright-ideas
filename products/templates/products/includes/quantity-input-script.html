@@ -7,7 +7,7 @@
         let plusDisabled = currentValue > 98;
         $(`#decrease-qty_${itemId}`).prop('disabled', minusDisabled);
         $(`#increase-qty_${itemId}`).prop('disabled', plusDisabled);
-    }
+    };
 
     // Disable - btn on page load 
     let allQtyInputs = $('.qty_input');
@@ -20,7 +20,7 @@
     $('.qty_input').change(function() {
         let itemId = $(this).data('item-id');
         handleEnableDisable(itemId);
-    })
+    });
 
     // Increase quantity
     $('.increase-qty').click(function(e) {
