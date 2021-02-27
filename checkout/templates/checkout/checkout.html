@@ -40,7 +40,7 @@
                </div>
                {% for item in cart_items %}
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-3">
                         {% if item.product.image_url %}
                             <a href="{% url 'product_item' item.product.id %}" target="_blank">
                                 <img src="{{ item.product.image_url }}" alt="{{ product.name }}" class="w-100">
@@ -64,7 +64,7 @@
                         {% endif %}
                         <p class="text-black small">Qty: {{ item.quantity }}</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-2 text-end">
                         <p class="text-black small">€{{ item.product.price | subtotal:item.quantity }}</p>
                     </div>
                 </div>
