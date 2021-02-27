@@ -260,4 +260,7 @@ The image I have used for the 404 and 500 pages is from [Free SVG](https://frees
 
   - Help with the date picker for the Tradespeople booking form came from (Vitor Freitas)[https://simpleisbetterthancomplex.com/tutorial/2019/01/03/how-to-use-date-picker-with-django.html] and his article on (Simple is better than complex)[https://simpleisbetterthancomplex.com/]
 
-  - To get the date verification to not allow a past time or date working I found help on (Stack Overflow)[https://stackoverflow.com/questions/50002600/django-models-datefield-prevent-past] from an answer by benwad which also pointed me towards the (Django Docs)[https://docs.djangoproject.com/en/3.1/topics/i18n/timezones/]
+  - To get the date verification to not allow a past time or date working I found help on (Stack Overflow)[https://stackoverflow.com/questions/50002600/django-models-datefield-prevent-past] from an answer by **benwad** which also pointed me towards the (Django Docs)[https://docs.djangoproject.com/en/3.1/topics/i18n/timezones/] to get everything working as required
+
+  - To get a clearer picture of how to add some delete verification on products for the admin I watched these videos (Coding Entrepreneurs)[https://www.youtube.com/watch?v=3VBHWLFza4s] and (Arbadjie)[https://www.youtube.com/watch?v=3RPGYPKeXFo]
+  
