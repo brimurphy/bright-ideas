@@ -1,5 +1,15 @@
 from django import forms
+from django.core.exceptions import ValidationError
+from django.utils import timezone
+
 from profiles.models import UserProfile
+
+
+def date_validate(date):
+    if date <= timezone.now():
+        raise ValidationError(
+            "Great Scott!! That date is past,\
+                please select a future time")
 
 
 class BookingForm(forms.ModelForm):
@@ -15,12 +25,13 @@ class BookingForm(forms.ModelForm):
         'placeholder': 'Additional Comments...',
     }),)
     date = forms.DateTimeField(
+        validators=[date_validate],
         input_formats=['%DD/%MM/%YYYY %HH:%mm'],
         widget=forms.DateTimeInput(attrs={
             'type': 'datetime-local',
             'class': 'form-control date-time-picker-input',
-            'data-target': '#date-time-picker'
-        })
+            'data-target': '#date-time-picker',
+        }),
     )
 
     def __init__(self, *args, **kwargs):
