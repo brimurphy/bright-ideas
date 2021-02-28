@@ -11,11 +11,11 @@ class Reviews(models.Model):
 
     user = models.ForeignKey(
         UserProfile, on_delete=models.SET_NULL,
-        null=True, blank=True,)
+        null=True, blank=True, default='Anonymous')
     trades_person = models.ForeignKey(
         TradesPeople, on_delete=models.CASCADE, null=False, blank=False,)
     comment = models.TextField()
-    rating = models.IntegerField(null=True, blank=True,)
+    rating = models.IntegerField(null=True, blank=True, )
     date = models.DateTimeField(auto_now_add=True,)
 
     def __str__(self):

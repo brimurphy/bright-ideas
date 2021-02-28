@@ -41,8 +41,9 @@ def add_reviews(request):
 @login_required
 def add_trades_person_review(request, trades_person_id):
     # Allow users to post reviews on tradespeople
-    reviews = Reviews.objects.select_related('user').select_related('trades_person').all()
-    print(Reviews.objects.select_related('user').select_related('trades_person').all().query)
+    reviews = (Reviews.objects.select_related('user').
+               select_related('trades_person').all())
+
     form = ReviewForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
