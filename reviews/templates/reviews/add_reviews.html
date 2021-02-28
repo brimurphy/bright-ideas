@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<!-- Review Form -->
+
+    <section class="container">
+        <div class="row">
+            <div class="col-12 text-center text-uppercase py-1 mt-4">
+                <hr class="block-divder">
+                <h2 class="header-font text-black">Review Form</h2>
+                <hr class="block-divder">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3 trade-border my-4 p-5 border-1 rounded-2">
+                <form method="POST" action="{% url 'add_trades_person_review' trades_person_id %}" class="mt-3" id="custom-form-style">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="header-font text-black text-glow"></h3>
+                            <p class="text-muted">Please leave a review:</p>
+                        </div>
+                    </div>
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="row">
+                        <div class="col-12 col-md-6 my-4">
+                            <a href="{% url 'tradespeople' %}" class="btn btn-black float-end" type="submit">
+                                <span class="icon">
+                                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                </span>
+                                <span>
+                                    Back
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-6 my-4">
+                            <button class="btn btn-gold" type="submit">
+                                <span>
+                                    Complete
+                                </span>
+                                <span class="icon">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    {% for review in reviews %}
+                        <div class="col-12 my-4 rounded-2">
+                            <div class="row">
+                                <div class="col-12 text-center my-2 py-2">
+                                    <h3 class="header-font text-black text-glow">Reviews</h3>
+                                    <hr class="block-divder">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 offset-3 text-black">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <span class="icon">
+                                                <i class="fa fa-comment text-glow" aria-hidden="true"></i>
+                                            </span>
+                                            <p class="text-black text-break">
+                                                {{ review.comment }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            {% if review.rating %}
+                                                <p>
+                                                    <span class="icon">
+                                                        <i class="fa fa-star text-glow" aria-hidden="true"></i>
+                                                    </span>
+                                                    <span>
+                                                        {{ review.rating }} / 5
+                                                    </span>
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p>
+                                            <span class="icon text-glow">
+                                                <i class="fa fa-clock" aria-hidden="true"></i>
+                                            </span>
+                                            <span>
+                                                {{ review.date }}
+                                            </span>
+                                        </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p>
+                                            <span class="icon text-glow">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                            </span>
+                                            <span>
+                                                {{ review.user.default_full_name }} 
+                                            </span>
+                                        </p>
+                                        </div>
+                                    </div>      
+                                </div>
+            
+
+                            <!-- Button to go to booking form -->
+                            <div class="row">
+                                <div class="col-12 col-md-6 offset-md-3 text-center my-2">
+                                    <a href="" class="btn btn-block btn-lg btn-gold">Book</a>
+                                </div>
+                            </div>
+                        </div> 
+                    {% endfor %}
+                    {{ reviews }}
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+{% endblock %}
