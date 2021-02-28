@@ -1,4 +1,4 @@
-![Bright Ideas](media/wireframes/site-image)
+![Bright Ideas](../wireframes/site-image)
 
 # Share A Plate
 
@@ -85,7 +85,7 @@ View TESTING.md [HERE](https://github.com/brimurphy/bright-ideas/blob/master/TES
 
   ### Colour Scheme
 
-  ![Colour Palette](media/wireframes/color-palette.png)
+  ![Colour Palette](../wireframes/color-palette.png)
 
   The main colours of the site are **Eerie Black** (#1F1F1F) and **Snow White** (#fffafa).
   These were chosen to give the user an easy on the eye and for good readability.
@@ -111,9 +111,24 @@ View TESTING.md [HERE](https://github.com/brimurphy/bright-ideas/blob/master/TES
 
   ### Existing Features
 
-   
+   - Responsive Design
+   - Hero Carousel on home page
+   - Item image can be clicked to bring the user to the details page.
+   - Page has category buttons at the top so that user can easily filter all items by categories or all
+   - Average rating displayed but not currently functional
+   - Displays summary of items with the subtotal excluding the delivery.
+   - User can navigate back to the produucts page with a back to top button
+   - Tips displayed on forms to help user fill out correctly
+   - Admin control to delete products, update products and add products
+   - User can view previous orders in their profile page
+   - Secure Checkout
 
-  ### Future Features
+ ### Future Features
+   - Abilty to rate and review products
+   - Update quantity items when at checkout
+   - Add social log in controls
+   - Add Google pay and paypal capabilities
+   
 
 
 ## Technologies Used
@@ -136,11 +151,18 @@ View TESTING.md [HERE](https://github.com/brimurphy/bright-ideas/blob/master/TES
     
   * Backend
 
-    - []()
-    - [](/)
-    - []()
-    - []()
-    - []()
+    - [Django](https://www.djangoproject.com/)
+    - [Strip](https://stripe.com/en-ie)
+    - [AWS](https://aws.amazon.com/)
+    - [Pip3](https://pip.pypa.io/en/stable//)
+    - [SQLite](https://www.sqlite.org/index.html)
+    - [PostgresSQL](https://www.postgresql.org/)
+    - [Gunicorn](https://pypi.org/project/gunicorn/)
+    - [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+    - [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+    - [Pillow](https://pillow.readthedocs.io/en/stable/)
+    - [Psycopg2](https://pypi.org/project/psycopg2/)
+    - [Dj Database URL](https://pypi.org/project/dj-database-url/)
 
   * Other
 
@@ -164,13 +186,37 @@ View TESTING.md [HERE](https://github.com/brimurphy/bright-ideas/blob/master/TES
   
 ## Deployment
 
-#### Requirements
-
 ### Steps for Cloning Locally
-
 
 ### Deploying to Heroku
 
+  - Go to Heroku website and login or sign up
+  - Once logged in click 'new' and 'create new app' like **bright-ideas-bm**
+  - Give the app an appropriate name and select your closest region
+  - Now click create app
+  - On resource tab, in add-ons bar add Heroku Postgres Database
+  - To use Postgres you need to go back to gitpod and install *dj-database-url* and *psycopg2-binary*
+  - Once installed freeze requirements with pip3 freeze > requirements.txt
+  - Set up database by going to settings.py and import *dj-database-url*
+  - In settings.py navigate to database settings and replace default database with a call to *dj_database_url.parse()*
+  - Add database URL from Heroku settings config vars inside parenthesis
+  - Run migrations in gitpod *python3 manage.py migrate* to apply migrations and apply database
+  - Import product data by entering *python3 manage.py loaddata categories* and *python3 manage.py loaddata products* in this order
+  - Add superuser to log in with *python3 manage.py createsuperuser*
+  - **Don't commit** with Heroku database settings visible change database back to original database URL before commit
+  - Install gunicorn and freeze requirements 
+  - Now we can create our Procfile that tells Heroku to create a web dyno
+  - Temporarilly disable *collect static* by entering *heroku config:set DISAABLE_COLLECTSTATIC = 1 --bright-ideas-bm*
+  - Add Host name of heroku app to allowed settings.py, allow local host as well to allow access from gitpod.
+  - To push to heroku you may need to initialise your heroku git remote *heroku git:remote -a bright-ideas-bm*
+  - Then push to heroku *git push heroku master*
+  - We can set up to automatically push to heroku when we push to github by going to the heroku app.
+  - Go to deploy tab- In deployment select Github.
+  - Search for repository and press connect.
+  - Scroll down to automatic deploys and enable them.
+  - Get secret key and add to heroku config settings.
+  - Go to settings.py remove secret key and replace with a call to get it from the environment *SECRET_KEY = os.environ.get('SECRET_KEY', '')
+  - Set debug to be True only if there is a variable called development in the environment *DEBUG = 'DEVELOPMENT' in os.environ*
 
 ## Credits
 

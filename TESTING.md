@@ -1,4 +1,4 @@
-![]()
+![Bright Ideas](../wireframes/site-image)
 
 # Share A Plate
 
@@ -15,16 +15,6 @@ View README.md [HERE](https://github.com/brimurphy/bright-ideas/blob/master/READ
 - [Manual Testing](#manual-testing)
 
 - [Bugs](#bugs)
-
-- [Future Features](#future-features)
-
-- [Wireframes](#wireframes)
-
-- [Technologies Used](#technologies-used)
-
-- [Testing](#testing)
-
-
 
 ## Automated Testing
  
