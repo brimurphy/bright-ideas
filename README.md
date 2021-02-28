@@ -1,4 +1,4 @@
-![Bright Ideas](../wireframes/site-image)
+![Bright Ideas](media/wireframes/site-image.png)
 
 # Share A Plate
 
@@ -85,7 +85,7 @@ View TESTING.md [HERE](https://github.com/brimurphy/bright-ideas/blob/master/TES
 
   ### Colour Scheme
 
-  ![Colour Palette](../wireframes/color-palette.png)
+  ![Colour Palette](./media/wireframes/color-palette.png)
 
   The main colours of the site are **Eerie Black** (#1F1F1F) and **Snow White** (#fffafa).
   These were chosen to give the user an easy on the eye and for good readability.
@@ -128,7 +128,8 @@ View TESTING.md [HERE](https://github.com/brimurphy/bright-ideas/blob/master/TES
    - Update quantity items when at checkout
    - Add social log in controls
    - Add Google pay and paypal capabilities
-   
+   - Customers to be able to leave reviews for Tradespeople, currently the can view them and form post not operational
+
 
 
 ## Technologies Used
@@ -187,6 +188,39 @@ View TESTING.md [HERE](https://github.com/brimurphy/bright-ideas/blob/master/TES
 ## Deployment
 
 ### Steps for Cloning Locally
+
+  - Go to the project repository Bright Ideas
+
+  - Open Git and select clone from the repository tab. Enter source location Bright Ideas and the location you wish to store the files and press the clone button
+
+  - Clone the project using `git clone`
+
+  - Open your IDE and navigate to the directory where you stored the cloned files
+
+  - Install requirements from requirements.txt file by entering pip3 install -r requirements.txt in the terminal
+
+  - Activate your virtual environment by py -m venv virtual into the terminal
+
+  - Create an environment file env.py to store environment variables. Add environment variables as shown:
+
+  - Run a PostgresSQL database, e.g. [using docker](https://hub.docker.com/_/postgres) 
+
+  - os.environ.setdefault('SECRET_KEY', '')
+  - os.environ.setdefault('STRIPE_PUBLIC_KEY', '')
+  - os.environ.setdefault('STRIPE_SECRET_KEY', '')
+  - os.environ.setdefault('STRIPE_WH_SECRET', '')
+  - os.environ.setdefault('EMAIL_HOST_USER', '')
+  - os.environ.setdefault('EMAIL_HOST_PASS', '')
+  - os.environ.setdefault('EMAIL_HOST_USER', '')
+  - os.environ.setdefault('AWS_ACCESS_KEY_ID', '')
+  - os.environ.setdefault('AWS_SECRET_ACCESS_KEY', '')
+  - os.environ.setdefault('DATABASE_URL', '')
+
+7. Add `env.py` to a `.gitignore` file so sensitive data will not be pushed to GIT
+
+8. Run `python3 manage.py migrate`
+
+9. You should now be able to run the program by entering `python3 app.py` into the terminal
 
 ### Deploying to Heroku
 
@@ -293,7 +327,7 @@ The image I have used for the 404 and 500 pages is from [Free SVG](https://frees
 
 
 
-### Acknowledgements
+## Credits
 
 ### Code
 
@@ -310,3 +344,9 @@ The image I have used for the 404 and 500 pages is from [Free SVG](https://frees
 
   - To get a clearer picture of how to add some delete verification on products for the admin I watched these videos (Coding Entrepreneurs)[https://www.youtube.com/watch?v=3VBHWLFza4s] and (Arbadjie)[https://www.youtube.com/watch?v=3RPGYPKeXFo]
   
+### Ackknowledgements
+
+  - Thank you to everyone who took their time to provide me constructive feedback on the Slack community page.
+  - Thanks to my friends and family for endless testing.
+  - Big thanks to my mentor for putting up with my questions and giving me great insights.
+

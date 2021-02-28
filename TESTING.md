@@ -1,4 +1,4 @@
-![Bright Ideas](../wireframes/site-image)
+![Bright Ideas](media/wireframes/site-image.png)
 
 # Share A Plate
 
