@@ -1,4 +1,4 @@
-![Bright Ideas](/media/wireframes/site-image)
+![Bright Ideas](media/wireframes/site-image)
 
 # Share A Plate
 
@@ -85,7 +85,7 @@ View TESTING.md [HERE](https://github.com/brimurphy/bright-ideas/blob/master/TES
 
   ### Colour Scheme
 
-  ![Colour Palette](/media/wireframes/color-palette.png)
+  ![Colour Palette](media/wireframes/color-palette.png)
 
   The main colours of the site are **Eerie Black** (#1F1F1F) and **Snow White** (#fffafa).
   These were chosen to give the user an easy on the eye and for good readability.
