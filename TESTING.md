@@ -77,3 +77,30 @@ View README.md [HERE](https://github.com/brimurphy/bright-ideas/blob/master/READ
 8. 
 
 ### Bugs
+
+  * Emails not being sent after successful purchase:
+    After adding print statements to checkout sequence, re-watching boutique ado stripe and wh videos, I found that pid had been changed to client_secret on stripe and the incorrect template name was being called in the wh handler.
+
+    **fixed**
+
+  * Error: Save() prohibited to prevent data loss due to unsaved related object:
+    Error when creating and adjusting cart, totals in views and admin not updating values. Order save function missing from Order model
+    Help from tutor supports Cormac Lawlor
+
+    **fixed**
+
+  * All deals query search:
+    I couldn't get the All Deals search to render the correct items, with some help from [Django ORM Cookbook](https://books.agiliq.com/projects/django-orm-cookbook/en/latest/or_query.html) and (Wellfire article)[https://wellfire.co/learn/simple-search-manager-methods/] and  (Django Docs)[https://docs.djangoproject.com/en/3.1/topics/db/search/] I got this sorted.
+
+    **fixed**
+
+  * Footer to stay at bottom:
+    Footer wouldn't stay to at least to the bottom of the view port, I found a few solutions like (Free Code Camps)[https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/] but this caused an issue on the product add template with the footer covering the bottom of the form.
+    Finally got issued sorted with [Stack Overflow](https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b) and vsync answer.
+
+    **fixed**
+
+  * Test Webhooks failing to send:
+    Test some test webhooks are returning 500 errors. The payments are working and webhooks recieved in Stripe. 
+
+    **unresolved**

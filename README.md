@@ -1,12 +1,12 @@
-![Bright Ideas]()
+![Bright Ideas](/media/wireframes/site-image)
 
 # Share A Plate
 
-View the live site [HERE]()
+View the live site [HERE](https://bright-ideas-bm.herokuapp.com/)
 
 View the GitHub repository [Here](https://github.com/brimurphy/bright-ideas)
 
-View TESTING.md [HERE]()
+View TESTING.md [HERE](https://github.com/brimurphy/bright-ideas/blob/master/TESTING.md)
 
 ## About
 
@@ -85,7 +85,7 @@ View TESTING.md [HERE]()
 
   ### Colour Scheme
 
-  ![Colour Palette](/color-palette.png)
+  ![Colour Palette](/media/wireframes/color-palette.png)
 
   The main colours of the site are **Eerie Black** (#1F1F1F) and **Snow White** (#fffafa).
   These were chosen to give the user an easy on the eye and for good readability.
@@ -160,7 +160,7 @@ View TESTING.md [HERE]()
 
 ## Testing
 
-View TESTING.md [HERE]()
+View TESTING.md [HERE](https://github.com/brimurphy/bright-ideas/blob/master/TESTING.md)
   
 ## Deployment
 
