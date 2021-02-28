@@ -8,17 +8,17 @@
         {{ message }}
     </div>
     {% if grand_total and not on_profile_page %}
-        <p class="header-font text-black">Your Bag ({{ product_count }})</p>
+        <p class="header-font text-black ps-2">Your Cart:</p>
         <div class="toast-cart text-black">
             {% for item in cart_items %}
                 <div class="row">
                     <div class="col-3 my-2">
                         {% if item.product.image_url %}
-                            <img src="{{ item.product.image_url }}" alt="{{ product.name }}" class="w-100">
+                            <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="w-100 ps-2">
                         {% elif item.product.image %}
-                                <img src="{{ item.product.image.url }}" alt="{{ product.name }}" class="card-img-top img-fluid">
+                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="card-img-top img-fluid w-100 ps-2">
                         {% else %}
-                            <img src="{{ MEDIA_URL }}no-image.jpg" alt="{{ product.name }}" class="w-100">
+                            <img src="{{ MEDIA_URL }}no-image.jpg" alt="{{ item.product.name }}" class="w-100 ps-2">
                         {% endif %}
                     </div>
                     <div class="col-9">
@@ -35,13 +35,13 @@
         </div>
         <div class="row">
             <div class="col">
-                <p class="text-black">
+                <p class="text-black ps-2">
                     <strong>Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}
                         <span>€{{ total|floatformat:2 }}</span>
                     </strong>
                 </p>
                 {% if free_delivery_delta > 0 %}
-                    <p class="text-center text-black">
+                    <p class="text-center text-black ps-2">
                         Spend <strong>€{{ free_delivery_delta }}</strong> more for free delivery!
                     </p>
                 {% endif %}

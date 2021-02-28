@@ -72,11 +72,28 @@
                             <h5 class="header-font text-black text-glow">{{ product.name }}</h5>
                             <div class="row">
                                 <div class="col-12">
-                                    <p class="text-black my-2">€{{ product.price }}</p>
+                                    <p class="text-black my-2">
+                                        <span class="icon">
+                                            <i class="fas fa-tag text-glow" aria-hidden="true"></i>
+                                        </span>
+                                        <span>
+                                            €{{ product.price }}
+                                        </span>
+                                    </p>
                                     {% if product.rating %}
+                                    <span class="icon">
+                                        <i class="fa fa-star text-glow" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
                                         <small class="text-muted">{{ product.rating }} / 5</small>
+                                    </span>
                                     {% else %}
+                                    <span class="icon">
+                                        <i class="fa fa-star text-glow" aria-hidden="true"></i>
+                                    </span>
+                                    <span>
                                         <small class="text-muted">No Rating</small>
+                                    </span>
                                     {% endif %}
                                 </div>
                             </div>
